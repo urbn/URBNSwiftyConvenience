@@ -1,9 +1,9 @@
 {
   "name": "URBNSwiftyConvenience",
   "version": "0.1.0",
-  "summary": "A short description of URBNSwiftyConvenience.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Lloyd/URBNSwiftyConvenience",
+  "summary": "Convenience methods for commonly used iOS frameworks",
+  "description": "This Cocoapod provides convenience extensions and methods on frameworks such as String, Date, UIImage, NotificationCenter, AutoLayout & more",
+  "homepage": "https://github.com/urbn/URBNSwiftyConvenience",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "Lloyd": "lloyd1nspace@users.noreply.github.com"
   },
   "source": {
-    "git": "https://github.com/Lloyd/URBNSwiftyConvenience.git",
+    "git": "https://github.com/urbn/URBNSwiftyConvenience.git",
     "tag": "0.1.0"
   },
   "platforms": {
