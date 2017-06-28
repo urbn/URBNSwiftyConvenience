@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias URBNConvenienceImageDrawBlock = (_ rect: CGRect, _ context: CGContext) -> ()
+
 public extension UIImage {
     public func tintedImage(color: UIColor) -> UIImage? {
         UIGraphicsBeginImageContext(self.size)
