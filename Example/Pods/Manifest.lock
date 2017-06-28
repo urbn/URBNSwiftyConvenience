@@ -1,0 +1,16 @@
+PODS:
+  - URBNSwiftyConvenience (0.1.0)
+
+DEPENDENCIES:
+  - URBNSwiftyConvenience (from `../`)
+
+EXTERNAL SOURCES:
+  URBNSwiftyConvenience:
+    :path: ../
+
+SPEC CHECKSUMS:
+  URBNSwiftyConvenience: 060eae72c7ca00af04f8cd3c6ec6cc3b5e03f740
+
+PODFILE CHECKSUM: 833a3f31ce3aa24cd3a81a72578dbc3c0dee9c41
+
+COCOAPODS: 1.2.1
