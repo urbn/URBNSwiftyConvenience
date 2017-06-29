@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'URBNSwiftyConvenience_Example' do
-  pod 'URBNSwiftyConvenience', :path => '~/Documents/Projects/URBNSwiftyConvenience'
+  pod 'URBNSwiftyConvenience', :path => '../'
 
   target 'URBNSwiftyConvenience_Tests' do
     inherit! :search_paths
