@@ -7,25 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00747427F461DC1F2D005759036D3018 /* LayoutConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DC71010FDBD53B9BC70CE1B9C829FF /* LayoutConvenience.swift */; };
-		046647DA2B27B64E181491E2FD24B16C /* DictionaryConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7CA37994EC9A241200B419656861F7 /* DictionaryConvenience.swift */; };
+		00B6555EDDB0BA3C090BDB36F83AF38A /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9542A56384F4BA87C0B8077A7015BA6 /* QRCodeGenerator.swift */; };
 		0A43A818B511F7E791DBBAA79C35210A /* Pods-URBNSwiftyConvenience_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 274753C4272E3AF44444E02BD5382149 /* Pods-URBNSwiftyConvenience_Example-dummy.m */; };
-		14834AFAAF2647CE1E859169B0E36CE2 /* URBNSwiftyConvenience-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5A55E7C2AE76EB265C186CBF5DD96D /* URBNSwiftyConvenience-dummy.m */; };
 		1CE146BD73C1FDB4B27A17756198F2DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		4B0D3B2228EEA0DC7165DE8C14B2FE57 /* NotificationConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9822D496502C2AAB1A92D42C6892C4 /* NotificationConvenience.swift */; };
+		536CF882D6C90DDAD678E5BD698E19CA /* LayoutConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7260947A0A7C63D112AFD7635436D2 /* LayoutConvenience.swift */; };
 		566F4BC845C73C850D1EA368A1C2A66B /* URBNSwiftyConvenience-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AD58FE0133C9E0A6BDEFF869814F7715 /* URBNSwiftyConvenience-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		584870139089ACA0816422442FBE7FD4 /* NotificationConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8241154C6D31817D35AAEF9EF88AB251 /* NotificationConvenience.swift */; };
 		5897537B68852892DA50B9832D188D0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		673DB2E7DB01A8032788DE745009856C /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB3F0BE9F5A74677B28459BDF32072 /* TableViewHelpers.swift */; };
-		6EEEDD72759886B61CD561662813CF4F /* SearchableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63EDFE76A78D9AB76D885538514C23C /* SearchableProtocol.swift */; };
+		64017C434D3F93A3D5D8561AADE9295C /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EAAC1D6F678C884DFB8F002F172E05 /* ResultType.swift */; };
+		6B34C5CC86C3F437D7865118C14365F8 /* DictionaryConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D54C2750BD9F279A03C65B031AA270 /* DictionaryConvenience.swift */; };
+		6EE1E33D3677D4ABA7DD8290CDADF1DC /* CollectionViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197F07524952AE5AF1839D84B783BDCC /* CollectionViewHelpers.swift */; };
+		82E6BC93BC9B1456B7AE0FEB392D220D /* SearchableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD701E551F0B5DBDAC004A6D78DAA6D8 /* SearchableProtocol.swift */; };
+		8ACD75D4DC55B5CD7DC5395EEEDAFC95 /* URBNSwiftyConvenience-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5A55E7C2AE76EB265C186CBF5DD96D /* URBNSwiftyConvenience-dummy.m */; };
+		8DB39B0CB419AFDE906756626DF03192 /* UIColorConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A113E9AA29A141C0F7C1E948F1531A06 /* UIColorConvenience.swift */; };
 		9FB2755E535A3592560C71BC178DFDDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		ADB840CC9774E5C86D4966B7C4EF14E9 /* Pods-URBNSwiftyConvenience_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BBF682516806EE15286F31938EF49EB /* Pods-URBNSwiftyConvenience_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C607AE4272EDC8E5D92506AFFC35639A /* Pods-URBNSwiftyConvenience_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59AC2E4D686E6E22125A9CB825FCCB94 /* Pods-URBNSwiftyConvenience_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CB43B2D9CB7A4DB42E6DC2BE4570D735 /* UIImageConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26168FE0C73E40B4F82CF480E383A037 /* UIImageConvenience.swift */; };
+		C683D22EA3D89FF969935AB6FA9E4FF6 /* UIImageConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9EDAEA119948289C2479EDC01B902E /* UIImageConvenience.swift */; };
 		D66281739333A2BCF6D40AD1AC469C3C /* Pods-URBNSwiftyConvenience_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A7CB59776FF41DDBB940B3DF86625F /* Pods-URBNSwiftyConvenience_Tests-dummy.m */; };
-		E2CE70A44186C0E1DBC8DFAB32FBB467 /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC751C6BAF08D0B0A0764965EAEE76F /* QRCodeGenerator.swift */; };
-		E3220EF8941D3EE9068340E224257C5A /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD032DB90AA293D274264FBF7AD8EEE0 /* ResultType.swift */; };
-		E3FAF70AF5CBEF651CADC80AA762E421 /* CollectionViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAC4DEE4E9A47C237C0D4D8CAE831D5 /* CollectionViewHelpers.swift */; };
-		EBAF6621A8C14550D2756EC6B1628E58 /* DateConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EDA835A0D3E219C1C85654F576A438 /* DateConvenience.swift */; };
+		D99A5C0DA0D945F3D4B0CE6CA9EA4FF5 /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A17AC3CE94C65CCE208C7C0B23642ED /* TableViewHelpers.swift */; };
+		E1A9D96E8EAD40C1BE95333CE3080F79 /* DateConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F959D174315C4194A72D325132A0AC /* DateConvenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,29 +40,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0DC751C6BAF08D0B0A0764965EAEE76F /* QRCodeGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
-		1FAC4DEE4E9A47C237C0D4D8CAE831D5 /* CollectionViewHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollectionViewHelpers.swift; sourceTree = "<group>"; };
+		197F07524952AE5AF1839D84B783BDCC /* CollectionViewHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollectionViewHelpers.swift; sourceTree = "<group>"; };
+		1E9822D496502C2AAB1A92D42C6892C4 /* NotificationConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NotificationConvenience.swift; sourceTree = "<group>"; };
 		21CBF23141AC3ED7EF3AD19A459530DF /* URBNSwiftyConvenience-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URBNSwiftyConvenience-prefix.pch"; sourceTree = "<group>"; };
-		26168FE0C73E40B4F82CF480E383A037 /* UIImageConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImageConvenience.swift; sourceTree = "<group>"; };
 		274753C4272E3AF44444E02BD5382149 /* Pods-URBNSwiftyConvenience_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-URBNSwiftyConvenience_Example-dummy.m"; sourceTree = "<group>"; };
 		3AFEABA5D56CBF8EF2A87FE1CA187F75 /* URBNSwiftyConvenience.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = URBNSwiftyConvenience.framework; path = URBNSwiftyConvenience.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B5864F15002767DB941346E9C92ADF0 /* Pods-URBNSwiftyConvenience_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-URBNSwiftyConvenience_Example.modulemap"; sourceTree = "<group>"; };
-		3BCB3F0BE9F5A74677B28459BDF32072 /* TableViewHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
 		41AE7E544D662E4CC0527524CB67556D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		450516AB19421DFC69B8DF55142FD1D3 /* Pods_URBNSwiftyConvenience_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_URBNSwiftyConvenience_Example.framework; path = "Pods-URBNSwiftyConvenience_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46D7B3CC0C408DD694DBB8C0ED6EE9EB /* Pods-URBNSwiftyConvenience_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-URBNSwiftyConvenience_Example.release.xcconfig"; sourceTree = "<group>"; };
+		48EAAC1D6F678C884DFB8F002F172E05 /* ResultType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		52C7CEE1B8D4B976D264CFE42376A2D2 /* Pods-URBNSwiftyConvenience_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-URBNSwiftyConvenience_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		59AC2E4D686E6E22125A9CB825FCCB94 /* Pods-URBNSwiftyConvenience_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-URBNSwiftyConvenience_Example-umbrella.h"; sourceTree = "<group>"; };
+		5E7260947A0A7C63D112AFD7635436D2 /* LayoutConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LayoutConvenience.swift; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6A17AC3CE94C65CCE208C7C0B23642ED /* TableViewHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
 		6F6C2C81AE788DDD17B3A0D166D08D78 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BB59BF29B60F7CD428E8FF4EFE777FF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BC9EBD23959136F6F937BADBD657D75 /* Pods-URBNSwiftyConvenience_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-URBNSwiftyConvenience_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		8241154C6D31817D35AAEF9EF88AB251 /* NotificationConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NotificationConvenience.swift; sourceTree = "<group>"; };
 		8BBF682516806EE15286F31938EF49EB /* Pods-URBNSwiftyConvenience_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-URBNSwiftyConvenience_Tests-umbrella.h"; sourceTree = "<group>"; };
+		90F959D174315C4194A72D325132A0AC /* DateConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateConvenience.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		99A7CB59776FF41DDBB940B3DF86625F /* Pods-URBNSwiftyConvenience_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-URBNSwiftyConvenience_Tests-dummy.m"; sourceTree = "<group>"; };
 		9EE37D7E72C13D17DD9F2CB29AFE853F /* URBNSwiftyConvenience.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = URBNSwiftyConvenience.modulemap; sourceTree = "<group>"; };
 		9F7FF6D5557CACD4F94E468584A7F13E /* Pods-URBNSwiftyConvenience_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-URBNSwiftyConvenience_Tests.modulemap"; sourceTree = "<group>"; };
+		A113E9AA29A141C0F7C1E948F1531A06 /* UIColorConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIColorConvenience.swift; sourceTree = "<group>"; };
 		A325A03535547DBA4EA7508514051CDD /* Pods-URBNSwiftyConvenience_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-URBNSwiftyConvenience_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A3453E182CF91383B39278C4FF25D0B5 /* Pods-URBNSwiftyConvenience_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-URBNSwiftyConvenience_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A4CA04B53E6848E12A60792081323CB3 /* Pods-URBNSwiftyConvenience_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-URBNSwiftyConvenience_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -71,15 +74,14 @@
 		AB14A08FA92EFEF7CC5DE0909B001182 /* Pods-URBNSwiftyConvenience_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-URBNSwiftyConvenience_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		AC094B8AD489CE1F1AD5BA5D45054FEE /* Pods-URBNSwiftyConvenience_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-URBNSwiftyConvenience_Example-resources.sh"; sourceTree = "<group>"; };
 		AD58FE0133C9E0A6BDEFF869814F7715 /* URBNSwiftyConvenience-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URBNSwiftyConvenience-umbrella.h"; sourceTree = "<group>"; };
-		B3DC71010FDBD53B9BC70CE1B9C829FF /* LayoutConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LayoutConvenience.swift; sourceTree = "<group>"; };
+		AD9EDAEA119948289C2479EDC01B902E /* UIImageConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImageConvenience.swift; sourceTree = "<group>"; };
 		BA28A9D79ABBDA87BB5E51273FE3A4FE /* Pods-URBNSwiftyConvenience_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-URBNSwiftyConvenience_Example-frameworks.sh"; sourceTree = "<group>"; };
-		BD032DB90AA293D274264FBF7AD8EEE0 /* ResultType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		C057D993B45A745DE2F0E234F9E92E8D /* Pods-URBNSwiftyConvenience_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-URBNSwiftyConvenience_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		C0EDA835A0D3E219C1C85654F576A438 /* DateConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateConvenience.swift; sourceTree = "<group>"; };
+		C4D54C2750BD9F279A03C65B031AA270 /* DictionaryConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DictionaryConvenience.swift; sourceTree = "<group>"; };
 		E9433D1612E24E75DC23A75306E1EB9D /* Pods-URBNSwiftyConvenience_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-URBNSwiftyConvenience_Tests-resources.sh"; sourceTree = "<group>"; };
-		F63EDFE76A78D9AB76D885538514C23C /* SearchableProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SearchableProtocol.swift; sourceTree = "<group>"; };
+		E9542A56384F4BA87C0B8077A7015BA6 /* QRCodeGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
 		F6A41FF5435F89D628CA9B9F01CFF3B4 /* Pods_URBNSwiftyConvenience_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_URBNSwiftyConvenience_Tests.framework; path = "Pods-URBNSwiftyConvenience_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD7CA37994EC9A241200B419656861F7 /* DictionaryConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DictionaryConvenience.swift; sourceTree = "<group>"; };
+		FD701E551F0B5DBDAC004A6D78DAA6D8 /* SearchableProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SearchableProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2078E970A48F865C5F6112B72B9C4B9C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				197F07524952AE5AF1839D84B783BDCC /* CollectionViewHelpers.swift */,
+				90F959D174315C4194A72D325132A0AC /* DateConvenience.swift */,
+				C4D54C2750BD9F279A03C65B031AA270 /* DictionaryConvenience.swift */,
+				5E7260947A0A7C63D112AFD7635436D2 /* LayoutConvenience.swift */,
+				1E9822D496502C2AAB1A92D42C6892C4 /* NotificationConvenience.swift */,
+				E9542A56384F4BA87C0B8077A7015BA6 /* QRCodeGenerator.swift */,
+				48EAAC1D6F678C884DFB8F002F172E05 /* ResultType.swift */,
+				FD701E551F0B5DBDAC004A6D78DAA6D8 /* SearchableProtocol.swift */,
+				6A17AC3CE94C65CCE208C7C0B23642ED /* TableViewHelpers.swift */,
+				A113E9AA29A141C0F7C1E948F1531A06 /* UIColorConvenience.swift */,
+				AD9EDAEA119948289C2479EDC01B902E /* UIImageConvenience.swift */,
+			);
+			name = Classes;
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		4CC2BAA82F4BC231216FFDF480FD0E81 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				CFA2CAFB4CE0851131862CB67712286B /* Support Files */,
-				9E2BCE3B7981B03A605A6BAE3F56506C /* URBNSwiftyConvenience */,
+				989135E537E9E6A8227C5C1FA98AF071 /* URBNSwiftyConvenience */,
 			);
 			name = URBNSwiftyConvenience;
 			path = ../..;
@@ -141,22 +162,13 @@
 			);
 			sourceTree = "<group>";
 		};
-		8883112AD340D7A01E442859ABA6E63C /* Classes */ = {
+		989135E537E9E6A8227C5C1FA98AF071 /* URBNSwiftyConvenience */ = {
 			isa = PBXGroup;
 			children = (
-				1FAC4DEE4E9A47C237C0D4D8CAE831D5 /* CollectionViewHelpers.swift */,
-				C0EDA835A0D3E219C1C85654F576A438 /* DateConvenience.swift */,
-				FD7CA37994EC9A241200B419656861F7 /* DictionaryConvenience.swift */,
-				B3DC71010FDBD53B9BC70CE1B9C829FF /* LayoutConvenience.swift */,
-				8241154C6D31817D35AAEF9EF88AB251 /* NotificationConvenience.swift */,
-				0DC751C6BAF08D0B0A0764965EAEE76F /* QRCodeGenerator.swift */,
-				BD032DB90AA293D274264FBF7AD8EEE0 /* ResultType.swift */,
-				F63EDFE76A78D9AB76D885538514C23C /* SearchableProtocol.swift */,
-				3BCB3F0BE9F5A74677B28459BDF32072 /* TableViewHelpers.swift */,
-				26168FE0C73E40B4F82CF480E383A037 /* UIImageConvenience.swift */,
+				2078E970A48F865C5F6112B72B9C4B9C /* Classes */,
 			);
-			name = Classes;
-			path = Classes;
+			name = URBNSwiftyConvenience;
+			path = URBNSwiftyConvenience;
 			sourceTree = "<group>";
 		};
 		98BB56C9B060CDE9B2FEC0F4C1839ADA /* Development Pods */ = {
@@ -165,15 +177,6 @@
 				7468714B0C65BEF1967DBAF489E51ED9 /* URBNSwiftyConvenience */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		9E2BCE3B7981B03A605A6BAE3F56506C /* URBNSwiftyConvenience */ = {
-			isa = PBXGroup;
-			children = (
-				8883112AD340D7A01E442859ABA6E63C /* Classes */,
-			);
-			name = URBNSwiftyConvenience;
-			path = URBNSwiftyConvenience;
 			sourceTree = "<group>";
 		};
 		9FD93809288E3C2A1F0AA92173DE2D6B /* Pods-URBNSwiftyConvenience_Example */ = {
@@ -285,7 +288,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB094134F916CE5AEA6D44DDF2DC7129 /* Build configuration list for PBXNativeTarget "URBNSwiftyConvenience" */;
 			buildPhases = (
-				1D9636A946399114CD08BD47E0A6E2BF /* Sources */,
+				94ACB6CB354ACFE87675B44171F12ACC /* Sources */,
 				D470C67E1B5CFB685B0E93856042A97E /* Frameworks */,
 				2DBB27C2F9012C14C498E9DCA6970A25 /* Headers */,
 			);
@@ -370,29 +373,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1D9636A946399114CD08BD47E0A6E2BF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E3FAF70AF5CBEF651CADC80AA762E421 /* CollectionViewHelpers.swift in Sources */,
-				EBAF6621A8C14550D2756EC6B1628E58 /* DateConvenience.swift in Sources */,
-				046647DA2B27B64E181491E2FD24B16C /* DictionaryConvenience.swift in Sources */,
-				00747427F461DC1F2D005759036D3018 /* LayoutConvenience.swift in Sources */,
-				584870139089ACA0816422442FBE7FD4 /* NotificationConvenience.swift in Sources */,
-				E2CE70A44186C0E1DBC8DFAB32FBB467 /* QRCodeGenerator.swift in Sources */,
-				E3220EF8941D3EE9068340E224257C5A /* ResultType.swift in Sources */,
-				6EEEDD72759886B61CD561662813CF4F /* SearchableProtocol.swift in Sources */,
-				673DB2E7DB01A8032788DE745009856C /* TableViewHelpers.swift in Sources */,
-				CB43B2D9CB7A4DB42E6DC2BE4570D735 /* UIImageConvenience.swift in Sources */,
-				14834AFAAF2647CE1E859169B0E36CE2 /* URBNSwiftyConvenience-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4FFC24065126B8E6AD97782B4357388B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0A43A818B511F7E791DBBAA79C35210A /* Pods-URBNSwiftyConvenience_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94ACB6CB354ACFE87675B44171F12ACC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EE1E33D3677D4ABA7DD8290CDADF1DC /* CollectionViewHelpers.swift in Sources */,
+				E1A9D96E8EAD40C1BE95333CE3080F79 /* DateConvenience.swift in Sources */,
+				6B34C5CC86C3F437D7865118C14365F8 /* DictionaryConvenience.swift in Sources */,
+				536CF882D6C90DDAD678E5BD698E19CA /* LayoutConvenience.swift in Sources */,
+				4B0D3B2228EEA0DC7165DE8C14B2FE57 /* NotificationConvenience.swift in Sources */,
+				00B6555EDDB0BA3C090BDB36F83AF38A /* QRCodeGenerator.swift in Sources */,
+				64017C434D3F93A3D5D8561AADE9295C /* ResultType.swift in Sources */,
+				82E6BC93BC9B1456B7AE0FEB392D220D /* SearchableProtocol.swift in Sources */,
+				D99A5C0DA0D945F3D4B0CE6CA9EA4FF5 /* TableViewHelpers.swift in Sources */,
+				8DB39B0CB419AFDE906756626DF03192 /* UIColorConvenience.swift in Sources */,
+				C683D22EA3D89FF969935AB6FA9E4FF6 /* UIImageConvenience.swift in Sources */,
+				8ACD75D4DC55B5CD7DC5395EEEDAFC95 /* URBNSwiftyConvenience-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
