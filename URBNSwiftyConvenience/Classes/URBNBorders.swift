@@ -14,3 +14,13 @@ public class URBNBorder: NSObject {
     let insets = UIEdgeInsets()
 }
 
+fileprivate class URBNBorderView: UIView {
+    let urbn_leftBorder: URBNBorder?
+    let urbn_topBorder: URBNBorder?
+    let urbn_rightBorder: URBNBorder?
+    let urbn_bottomBorder: URBNBorder?
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
