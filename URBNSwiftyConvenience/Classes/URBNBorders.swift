@@ -15,10 +15,10 @@ public class URBNBorder: NSObject {
 }
 
 fileprivate class URBNBorderView: UIView {
-    let urbn_leftBorder: URBNBorder?
-    let urbn_topBorder: URBNBorder?
-    let urbn_rightBorder: URBNBorder?
-    let urbn_bottomBorder: URBNBorder?
+    var urbn_leftBorder: URBNBorder?
+    var urbn_rightBorder: URBNBorder?
+    var urbn_topBorder: URBNBorder?
+    var urbn_bottomBorder: URBNBorder?
     
     private final let width = "width"
     private final let color = "color"
@@ -45,6 +45,32 @@ fileprivate class URBNBorderView: UIView {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        setNeedsDisplay()
+    }
+    
+    // MARK: Clear
+    func clearAllBorders() {
+        guard
+            let leftBorder = urbn_leftBorder,
+            let rightBorder = urbn_rightBorder,
+            let topBorder = urbn_topBorder,
+            let bottomBorder = urbn_bottomBorder else {
+                return
+        }
+        
+        unregisterKVO(forBorder: leftBorder)
+        unregisterKVO(forBorder: rightBorder)
+        unregisterKVO(forBorder: topBorder)
+        unregisterKVO(forBorder: bottomBorder)
+        
+        urbn_leftBorder = nil
+        urbn_rightBorder = nil
+        urbn_topBorder = nil
+        urbn_bottomBorder = nil
+    }
+    
+    func urbn_resetBorders() {
+        clearAllBorders()
         setNeedsDisplay()
     }
 }
