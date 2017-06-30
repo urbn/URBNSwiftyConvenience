@@ -73,4 +73,33 @@ fileprivate class URBNBorderView: UIView {
         clearAllBorders()
         setNeedsDisplay()
     }
+    
+    // MARK: Border Check for Nil
+    func urbn_LeftBorder() -> URBNBorder? {
+        guard var leftBorder = urbn_leftBorder else { return nil }
+        leftBorder = configuredBorder()
+
+        return leftBorder
+    }
+    
+    func urbn_RightBorder() -> URBNBorder? {
+        guard var rightBorder = urbn_rightBorder else { return nil }
+        rightBorder = configuredBorder()
+        
+        return rightBorder
+    }
+    
+    func urbn_TopBorder() -> URBNBorder? {
+        guard var topBorder = urbn_topBorder else { return nil }
+        topBorder = configuredBorder()
+        
+        return topBorder
+    }
+    
+    func urbn_BottomBorder() -> URBNBorder? {
+        guard var bottomBorder = urbn_bottomBorder else { return nil }
+        bottomBorder = configuredBorder()
+        
+        return bottomBorder
+    }
 }
