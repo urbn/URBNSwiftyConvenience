@@ -193,4 +193,8 @@ fileprivate class URBNBorderView: UIView {
         context.restoreGState()
     }
     
+    // MARK: deinit
+    deinit {
+        clearAllBorders()
+    }
 }
