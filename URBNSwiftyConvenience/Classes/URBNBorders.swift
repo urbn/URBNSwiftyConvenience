@@ -11,8 +11,8 @@ import Foundation
 fileprivate var kURBNorderViewKey = CChar()
 
 public class URBNBorder: NSObject {
-    public let color = UIColor()
-    public let width = CGFloat()
+    public var color = UIColor()
+    public var width = CGFloat()
     public let insets = UIEdgeInsets()
 }
 
@@ -252,11 +252,18 @@ extension UIView {
     }
     
     public func urbn_resetBorders() {
-        
+        urbn_borderView()?.urbn_resetBorders()
     }
     
     public func urbn_setBorder(withColor color: UIColor, width: CGFloat) {
-        
+        urbn_leftBorder?.width = width
+        urbn_rightBorder?.width = width
+        urbn_topBorder?.width = width
+        urbn_bottomBorder?.width = width
+        urbn_leftBorder?.color = color
+        urbn_rightBorder?.color = color
+        urbn_topBorder?.color = color
+        urbn_bottomBorder?.color = color
     }
     
 }
