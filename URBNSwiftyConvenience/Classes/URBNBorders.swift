@@ -8,6 +8,8 @@
 
 import Foundation
 
+fileprivate var kURBNorderViewKey = CChar()
+
 public class URBNBorder: NSObject {
     public let color = UIColor()
     public let width = CGFloat()
@@ -23,11 +25,13 @@ fileprivate class URBNBorderView: UIView {
     private final let width = "width"
     private final let color = "color"
     private final let insets = "insets"
-    
-    fileprivate let kURBNorderViewKey = CChar()
-    
+
     convenience init() {
         self.init()
+    }
+    
+    override convenience init(frame: CGRect) {
+        self.init(frame: frame)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -75,7 +79,7 @@ fileprivate class URBNBorderView: UIView {
         self.bottomBorder = nil
     }
     
-    private func urbn_resetBorders() {
+    private func resetBorders() {
         clearAllBorders()
         setNeedsDisplay()
     }
@@ -220,6 +224,39 @@ extension UIView {
     
     public var urbn_bottomBorder: URBNBorder? {
         return self.urbn_bottomBorder != nil ? self.urbn_bottomBorder : nil
+    }
+    
+    private func urbn_borderView() -> URBNBorderView? {
+        if self == URBNBorderView() {
+            return self as? URBNBorderView
+        }
+
+        if var borderView = objc_getAssociatedObject(self, &kURBNorderViewKey) as? URBNBorderView {
+            borderView = URBNBorderView(frame: self.bounds)
+            borderView.isOpaque = false
+            borderView.isUserInteractionEnabled = false
+            borderView.clearsContextBeforeDrawing = true
+            borderView.contentMode = .redraw
+            borderView.translatesAutoresizingMaskIntoConstraints = false
+            self.addSubview(borderView)
+            
+            let views = ["borderView" : borderView]
+            activateVFL(format: "V:|[borderView]|", options: .alignAllCenterX, metrics: nil, views: views)
+            activateVFL(format: "H:|[borderView]|", options: .alignAllCenterY, metrics: nil, views: views)
+            objc_setAssociatedObject(self, &kURBNorderViewKey, borderView, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            
+            return borderView
+        }
+
+        return nil
+    }
+    
+    public func urbn_resetBorders() {
+        
+    }
+    
+    public func urbn_setBorder(withColor color: UIColor, width: CGFloat) {
+        
     }
     
 }
