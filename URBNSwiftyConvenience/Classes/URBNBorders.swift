@@ -25,6 +25,21 @@ extension UIView {
         return bottomBorder()
     }
     
+    public func urbn_setBorder(withColor color: UIColor, width: CGFloat) {
+        urbn_leftBorder?.width = width
+        urbn_rightBorder?.width = width
+        urbn_topBorder?.width = width
+        urbn_bottomBorder?.width = width
+        urbn_leftBorder?.color = color
+        urbn_rightBorder?.color = color
+        urbn_topBorder?.color = color
+        urbn_bottomBorder?.color = color
+    }
+    
+    public func urbn_resetBorders() {
+        urbn_borderView()?.resetBorders()
+    }
+    
     private func urbn_borderView() -> URBNBorderView? {
         if var borderView = objc_getAssociatedObject(self, &kURBNorderViewKey) as? URBNBorderView {
             borderView = URBNBorderView(frame: self.bounds)
@@ -45,22 +60,7 @@ extension UIView {
         
         return nil
     }
-    
-    public func urbn_resetBorders() {
-        urbn_borderView()?.resetBorders()
-    }
-    
-    public func urbn_setBorder(withColor color: UIColor, width: CGFloat) {
-        urbn_leftBorder?.width = width
-        urbn_rightBorder?.width = width
-        urbn_topBorder?.width = width
-        urbn_bottomBorder?.width = width
-        urbn_leftBorder?.color = color
-        urbn_rightBorder?.color = color
-        urbn_topBorder?.color = color
-        urbn_bottomBorder?.color = color
-    }
-    
+
     // MARK: Getters
     private func leftBorder() -> URBNBorder? {
         return self.urbn_borderView()?.urbn_LeftBorder()
@@ -85,7 +85,7 @@ public class URBNBorder: NSObject {
     public let insets = UIEdgeInsets()
 }
 
-fileprivate class URBNBorderView: UIView {
+fileprivate final class URBNBorderView: UIView {
     fileprivate var bv_leftBorder: URBNBorder?
     fileprivate var bv_rightBorder: URBNBorder?
     fileprivate var bv_topBorder: URBNBorder?
