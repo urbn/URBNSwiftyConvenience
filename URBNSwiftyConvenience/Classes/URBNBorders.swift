@@ -8,7 +8,76 @@
 
 import Foundation
 
-fileprivate var kURBNorderViewKey = CChar()
+extension UIView {
+    public var urbn_leftBorder: URBNBorder? {
+        return leftBorder()
+    }
+    
+    public var urbn_rightBorder: URBNBorder? {
+        return rightBorder()
+    }
+    
+    public var urbn_topBorder: URBNBorder? {
+        return topBorder()
+    }
+    
+    public var urbn_bottomBorder: URBNBorder? {
+        return bottomBorder()
+    }
+    
+    private func urbn_borderView() -> URBNBorderView? {
+        if var borderView = objc_getAssociatedObject(self, &kURBNorderViewKey) as? URBNBorderView {
+            borderView = URBNBorderView(frame: self.bounds)
+            borderView.isOpaque = false
+            borderView.isUserInteractionEnabled = false
+            borderView.clearsContextBeforeDrawing = true
+            borderView.contentMode = .redraw
+            borderView.translatesAutoresizingMaskIntoConstraints = false
+            self.addSubview(borderView)
+            
+            let views = ["borderView" : borderView]
+            activateVFL(format: "V:|[borderView]|", options: .alignAllCenterX, metrics: nil, views: views)
+            activateVFL(format: "H:|[borderView]|", options: .alignAllCenterY, metrics: nil, views: views)
+            objc_setAssociatedObject(self, &kURBNorderViewKey, borderView, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            
+            return borderView
+        }
+        
+        return nil
+    }
+    
+    public func urbn_resetBorders() {
+        urbn_borderView()?.resetBorders()
+    }
+    
+    public func urbn_setBorder(withColor color: UIColor, width: CGFloat) {
+        urbn_leftBorder?.width = width
+        urbn_rightBorder?.width = width
+        urbn_topBorder?.width = width
+        urbn_bottomBorder?.width = width
+        urbn_leftBorder?.color = color
+        urbn_rightBorder?.color = color
+        urbn_topBorder?.color = color
+        urbn_bottomBorder?.color = color
+    }
+    
+    // MARK: Getters
+    private func leftBorder() -> URBNBorder? {
+        return self.urbn_borderView()?.urbn_LeftBorder()
+    }
+    
+    private func rightBorder() -> URBNBorder? {
+        return self.urbn_borderView()?.urbn_RightBorder()
+    }
+    
+    private func topBorder() -> URBNBorder? {
+        return self.urbn_borderView()?.urbn_TopBorder()
+    }
+    
+    private func bottomBorder() -> URBNBorder? {
+        return self.urbn_borderView()?.urbn_BottomBorder()
+    }
+}
 
 public class URBNBorder: NSObject {
     public var color = UIColor()
@@ -209,73 +278,4 @@ fileprivate class URBNBorderView: UIView {
     }
 }
 
-extension UIView {
-    public var urbn_leftBorder: URBNBorder? {
-        return leftBorder()
-    }
-    
-    public var urbn_rightBorder: URBNBorder? {
-        return rightBorder()
-    }
-    
-    public var urbn_topBorder: URBNBorder? {
-        return topBorder()
-    }
-    
-    public var urbn_bottomBorder: URBNBorder? {
-        return bottomBorder()
-    }
-    
-    private func urbn_borderView() -> URBNBorderView? {
-        if var borderView = objc_getAssociatedObject(self, &kURBNorderViewKey) as? URBNBorderView {
-            borderView = URBNBorderView(frame: self.bounds)
-            borderView.isOpaque = false
-            borderView.isUserInteractionEnabled = false
-            borderView.clearsContextBeforeDrawing = true
-            borderView.contentMode = .redraw
-            borderView.translatesAutoresizingMaskIntoConstraints = false
-            self.addSubview(borderView)
-            
-            let views = ["borderView" : borderView]
-            activateVFL(format: "V:|[borderView]|", options: .alignAllCenterX, metrics: nil, views: views)
-            activateVFL(format: "H:|[borderView]|", options: .alignAllCenterY, metrics: nil, views: views)
-            objc_setAssociatedObject(self, &kURBNorderViewKey, borderView, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            
-            return borderView
-        }
-        
-        return nil
-    }
-    
-    public func urbn_resetBorders() {
-        urbn_borderView()?.resetBorders()
-    }
-    
-    public func urbn_setBorder(withColor color: UIColor, width: CGFloat) {
-        urbn_leftBorder?.width = width
-        urbn_rightBorder?.width = width
-        urbn_topBorder?.width = width
-        urbn_bottomBorder?.width = width
-        urbn_leftBorder?.color = color
-        urbn_rightBorder?.color = color
-        urbn_topBorder?.color = color
-        urbn_bottomBorder?.color = color
-    }
-    
-    // MARK: Getters
-    private func leftBorder() -> URBNBorder? {
-        return self.urbn_borderView()?.urbn_LeftBorder()
-    }
-    
-    private func rightBorder() -> URBNBorder? {
-        return self.urbn_borderView()?.urbn_RightBorder()
-    }
-    
-    private func topBorder() -> URBNBorder? {
-        return self.urbn_borderView()?.urbn_TopBorder()
-    }
-    
-    private func bottomBorder() -> URBNBorder? {
-        return self.urbn_borderView()?.urbn_BottomBorder()
-    }
-}
+fileprivate var kURBNorderViewKey = CChar()
