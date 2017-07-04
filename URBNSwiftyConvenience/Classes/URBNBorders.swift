@@ -17,10 +17,10 @@ public class URBNBorder: NSObject {
 }
 
 fileprivate class URBNBorderView: UIView {
-    private var leftBorder: URBNBorder?
-    private var rightBorder: URBNBorder?
-    private var topBorder: URBNBorder?
-    private var bottomBorder: URBNBorder?
+    fileprivate var bv_leftBorder: URBNBorder?
+    fileprivate var bv_rightBorder: URBNBorder?
+    fileprivate var bv_topBorder: URBNBorder?
+    fileprivate var bv_bottomBorder: URBNBorder?
     
     private final let width = "width"
     private final let color = "color"
@@ -61,10 +61,10 @@ fileprivate class URBNBorderView: UIView {
     // MARK: Clear
     private func clearAllBorders() {
         guard
-            let leftBorder = self.leftBorder,
-            let rightBorder = self.rightBorder,
-            let topBorder = self.topBorder,
-            let bottomBorder = self.bottomBorder else {
+            let leftBorder = self.bv_leftBorder,
+            let rightBorder = self.bv_rightBorder,
+            let topBorder = self.bv_topBorder,
+            let bottomBorder = self.bv_bottomBorder else {
                 return
         }
         
@@ -73,13 +73,13 @@ fileprivate class URBNBorderView: UIView {
         unregisterKVO(forBorder: topBorder)
         unregisterKVO(forBorder: bottomBorder)
         
-        self.leftBorder = nil
-        self.rightBorder = nil
-        self.topBorder = nil
-        self.bottomBorder = nil
+        self.bv_leftBorder = nil
+        self.bv_rightBorder = nil
+        self.bv_topBorder = nil
+        self.bv_bottomBorder = nil
     }
     
-    private func resetBorders() {
+    fileprivate func resetBorders() {
         clearAllBorders()
         setNeedsDisplay()
     }
@@ -134,10 +134,10 @@ fileprivate class URBNBorderView: UIView {
     override func draw(_ rect: CGRect) {
         guard
             let upscale = upscaleTransform(),
-            let leftBorder = leftBorder,
-            let rightBorder = rightBorder,
-            let topBorder = topBorder,
-            let bottomBorder = bottomBorder else {
+            let leftBorder = bv_leftBorder,
+            let rightBorder = bv_rightBorder,
+            let topBorder = bv_topBorder,
+            let bottomBorder = bv_bottomBorder else {
                 return
         }
         let viewRect = rect.applying(upscale)
@@ -211,19 +211,19 @@ fileprivate class URBNBorderView: UIView {
 
 extension UIView {
     public var urbn_leftBorder: URBNBorder? {
-        return self.urbn_leftBorder != nil ? self.urbn_leftBorder : nil
+        return self.urbn_leftBorder
     }
     
     public var urbn_rightBorder: URBNBorder? {
-        return self.urbn_rightBorder != nil ? self.urbn_rightBorder : nil
+        return self.urbn_rightBorder
     }
     
     public var urbn_topBorder: URBNBorder? {
-        return self.urbn_topBorder != nil ? self.urbn_topBorder : nil
+        return self.urbn_topBorder
     }
     
     public var urbn_bottomBorder: URBNBorder? {
-        return self.urbn_bottomBorder != nil ? self.urbn_bottomBorder : nil
+        return self.urbn_bottomBorder
     }
     
     private func urbn_borderView() -> URBNBorderView? {
@@ -252,7 +252,7 @@ extension UIView {
     }
     
     public func urbn_resetBorders() {
-        urbn_borderView()?.urbn_resetBorders()
+        urbn_borderView()?.resetBorders()
     }
     
     public func urbn_setBorder(withColor color: UIColor, width: CGFloat) {
@@ -266,4 +266,20 @@ extension UIView {
         urbn_bottomBorder?.color = color
     }
     
+    // MARK: Getters
+    private func leftBorder() -> URBNBorder? {
+        return self.urbn_borderView()?.bv_leftBorder
+    }
+    
+    private func rightBorder() -> URBNBorder? {
+        return self.urbn_borderView()?.bv_rightBorder
+    }
+    
+    private func topBorder() -> URBNBorder? {
+        return self.urbn_borderView()?.bv_topBorder
+    }
+    
+    private func bottomBorder() -> URBNBorder? {
+        return self.urbn_borderView()?.bv_bottomBorder
+    }
 }
