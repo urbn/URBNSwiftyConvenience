@@ -50,9 +50,18 @@ extension UIView {
             borderView.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(borderView)
             
-            let views = ["borderView" : borderView]
-            activateVFL(format: "V:|[borderView]|", options: .alignAllCenterX, metrics: nil, views: views)
-            activateVFL(format: "H:|[borderView]|", options: .alignAllCenterY, metrics: nil, views: views)
+            if #available(iOS 9.0, *) {
+                borderView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+                borderView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+                borderView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+                borderView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+            }
+            else {
+                let views = ["borderView" : borderView]
+                activateVFL(format: "V:|[borderView]|", options: .alignAllCenterX, metrics: nil, views: views)
+                activateVFL(format: "H:|[borderView]|", options: .alignAllCenterY, metrics: nil, views: views)
+            }
+
             objc_setAssociatedObject(self, &kURBNBorderViewKey, borderView, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             
             return borderView
