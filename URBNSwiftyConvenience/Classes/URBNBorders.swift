@@ -41,8 +41,12 @@ extension UIView {
     }
     
     private func urbn_borderView() -> URBNBorderView? {
-        if var borderView = objc_getAssociatedObject(self, &kURBNBorderViewKey) as? URBNBorderView {
-            borderView = URBNBorderView(frame: self.bounds)
+        if let existingBorderView = objc_getAssociatedObject(self, &kURBNBorderViewKey) as? URBNBorderView {
+            
+            return existingBorderView
+        }
+        else {
+            let borderView = URBNBorderView(frame: self.bounds)
             borderView.isOpaque = false
             borderView.isUserInteractionEnabled = false
             borderView.clearsContextBeforeDrawing = true
@@ -61,15 +65,12 @@ extension UIView {
                 activateVFL(format: "V:|[borderView]|", options: .alignAllCenterX, metrics: nil, views: views)
                 activateVFL(format: "H:|[borderView]|", options: .alignAllCenterY, metrics: nil, views: views)
             }
-
             objc_setAssociatedObject(self, &kURBNBorderViewKey, borderView, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             
             return borderView
         }
-        
-        return nil
     }
-
+    
     // MARK: Getters
     private func leftBorder() -> URBNBorder? {
         return self.urbn_borderView()?.urbn_LeftBorder()
