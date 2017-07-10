@@ -92,7 +92,7 @@ extension UIView {
 public class URBNBorder: NSObject {
     public var color = UIColor()
     public var width = CGFloat()
-    public let insets = UIEdgeInsets()
+    public var insets = UIEdgeInsets()
 }
 
 fileprivate final class URBNBorderView: UIView {
