@@ -9,35 +9,35 @@
 import Foundation
 
 extension UIView {
-    public var urbn_leftBorder: URBNBorder? {
-        return leftBorder()
+    public var leftBorder: URBNBorder? {
+        return getLeftBorder()
     }
     
-    public var urbn_rightBorder: URBNBorder? {
-        return rightBorder()
+    public var rightBorder: URBNBorder? {
+        return getRightBorder()
     }
     
-    public var urbn_topBorder: URBNBorder? {
-        return topBorder()
+    public var topBorder: URBNBorder? {
+        return getTopBorder()
     }
     
-    public var urbn_bottomBorder: URBNBorder? {
-        return bottomBorder()
+    public var bottomBorder: URBNBorder? {
+        return getBottomBorder()
     }
     
-    public func urbn_setBorder(withColor color: UIColor, width: CGFloat) {
-        urbn_leftBorder?.width = width
-        urbn_rightBorder?.width = width
-        urbn_topBorder?.width = width
-        urbn_bottomBorder?.width = width
-        urbn_leftBorder?.color = color
-        urbn_rightBorder?.color = color
-        urbn_topBorder?.color = color
-        urbn_bottomBorder?.color = color
+    public func setBorder(withColor color: UIColor, width: CGFloat) {
+        leftBorder?.width = width
+        rightBorder?.width = width
+        topBorder?.width = width
+        bottomBorder?.width = width
+        leftBorder?.color = color
+        rightBorder?.color = color
+        topBorder?.color = color
+        bottomBorder?.color = color
     }
     
-    public func urbn_resetBorders() {
-        urbn_borderView()?.resetBorders()
+    public func resetBorders() {
+        urbn_borderView()?.urbn_resetBorders()
     }
     
     private func urbn_borderView() -> URBNBorderView? {
@@ -72,20 +72,20 @@ extension UIView {
     }
     
     // MARK: Getters
-    private func leftBorder() -> URBNBorder? {
-        return self.urbn_borderView()?.urbn_LeftBorder()
+    private func getLeftBorder() -> URBNBorder? {
+        return self.urbn_borderView()?.bv_leftBorder
     }
     
-    private func rightBorder() -> URBNBorder? {
-        return self.urbn_borderView()?.urbn_RightBorder()
+    private func getRightBorder() -> URBNBorder? {
+        return self.urbn_borderView()?.bv_rightBorder
     }
     
-    private func topBorder() -> URBNBorder? {
-        return self.urbn_borderView()?.urbn_TopBorder()
+    private func getTopBorder() -> URBNBorder? {
+        return self.urbn_borderView()?.bv_topBorder
     }
     
-    private func bottomBorder() -> URBNBorder? {
-        return self.urbn_borderView()?.urbn_BottomBorder()
+    private func getBottomBorder() -> URBNBorder? {
+        return self.urbn_borderView()?.bv_bottomBorder
     }
 }
 
@@ -96,10 +96,26 @@ public class URBNBorder: NSObject {
 }
 
 fileprivate final class URBNBorderView: UIView {
-    fileprivate var bv_leftBorder: URBNBorder?
-    fileprivate var bv_rightBorder: URBNBorder?
-    fileprivate var bv_topBorder: URBNBorder?
-    fileprivate var bv_bottomBorder: URBNBorder?
+    fileprivate var bv_leftBorder: URBNBorder? {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    fileprivate var bv_rightBorder: URBNBorder? {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    fileprivate var bv_topBorder: URBNBorder? {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    fileprivate var bv_bottomBorder: URBNBorder? {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     
     private final let width = "width"
     private final let color = "color"
@@ -116,80 +132,18 @@ fileprivate final class URBNBorderView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    // MARK: KVO
-    private func configuredBorder() -> URBNBorder {
-        let border = URBNBorder()
-        border.addObserver(self, forKeyPath: width, options: .new, context: nil)
-        border.addObserver(self, forKeyPath: color, options: .new, context: nil)
-        border.addObserver(self, forKeyPath: insets, options: .new, context: nil)
-        
-        return border
-    }
-    
-    private func unregisterKVO(forBorder border: URBNBorder) {
-        border.removeObserver(self, forKeyPath: width)
-        border.removeObserver(self, forKeyPath: color)
-        border.removeObserver(self, forKeyPath: insets)
-    }
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        setNeedsDisplay()
-    }
-    
+
     // MARK: Clear
     private func clearAllBorders() {
-        guard
-            let leftBorder = bv_leftBorder,
-            let rightBorder = bv_rightBorder,
-            let topBorder = bv_topBorder,
-            let bottomBorder = bv_bottomBorder else {
-                return
-        }
-        
-        unregisterKVO(forBorder: leftBorder)
-        unregisterKVO(forBorder: rightBorder)
-        unregisterKVO(forBorder: topBorder)
-        unregisterKVO(forBorder: bottomBorder)
-        
-        bv_leftBorder = nil
-        bv_rightBorder = nil
-        bv_topBorder = nil
-        bv_bottomBorder = nil
+        objc_setAssociatedObject(bv_leftBorder, &kURBNBorderViewKey, nil, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(bv_rightBorder, &kURBNBorderViewKey, nil, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(bv_topBorder, &kURBNBorderViewKey, nil, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(bv_bottomBorder, &kURBNBorderViewKey, nil, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
     
-    fileprivate func resetBorders() {
+    fileprivate func urbn_resetBorders() {
         clearAllBorders()
         setNeedsDisplay()
-    }
-    
-    // MARK: Border Check for Nil
-    fileprivate func urbn_LeftBorder() -> URBNBorder? {
-        guard var leftBorder = bv_leftBorder else { return nil }
-        leftBorder = configuredBorder()
-        
-        return leftBorder
-    }
-    
-    fileprivate func urbn_RightBorder() -> URBNBorder? {
-        guard var rightBorder = bv_rightBorder else { return nil }
-        rightBorder = configuredBorder()
-        
-        return rightBorder
-    }
-    
-    fileprivate func urbn_TopBorder() -> URBNBorder? {
-        guard var topBorder = bv_topBorder else { return nil }
-        topBorder = configuredBorder()
-        
-        return topBorder
-    }
-    
-    fileprivate func urbn_BottomBorder() -> URBNBorder? {
-        guard var bottomBorder = bv_bottomBorder else { return nil }
-        bottomBorder = configuredBorder()
-        
-        return bottomBorder
     }
     
     // MARK: Drawing
