@@ -12,8 +12,8 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0",
-    "tvos": "9.0"
+    "ios": "10.0",
+    "tvos": "10.0"
   },
   "requires_arc": true,
   "source_files": "URBNSwiftyConvenience/Classes/**/*"
