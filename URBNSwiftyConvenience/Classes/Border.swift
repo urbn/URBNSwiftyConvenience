@@ -8,6 +8,20 @@
 
 import UIKit
 
+/// Reuseable value type border view model that can be used to initalize a new border instance
+public struct BorderStyle {
+    
+    let color: UIColor
+    let pixelWidth: CGFloat
+    let insets: UIEdgeInsets
+    
+    init(color: UIColor, pixelWidth: CGFloat = 1, insets: UIEdgeInsets = .zero) {
+        self.color = color
+        self.pixelWidth = pixelWidth
+        self.insets = insets
+    }
+}
+
 /// Represents a border with a with a width, a color, and insets
 public final class Border: UIView {
     
@@ -56,6 +70,10 @@ public final class Border: UIView {
         
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = color
+    }
+    
+    public convenience init(borderStyle: BorderStyle) {
+        self.init(color: borderStyle.color, pixelWidth: borderStyle.pixelWidth, insets: borderStyle.insets)
     }
     
     public convenience init(border: Border) {

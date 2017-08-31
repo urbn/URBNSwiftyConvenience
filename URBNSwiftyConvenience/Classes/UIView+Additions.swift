@@ -92,7 +92,7 @@ extension UIView {
     ///
     /// - Parameter border: border to set
     public func setBorder(_ border: Border) {
-        urbn_topBorder = border
+        urbn_topBorder = Border(border: border)
         urbn_bottomBorder = Border(border: border)
         urbn_leadingBorder = Border(border: border)
         urbn_trailingBorder = Border(border: border)
