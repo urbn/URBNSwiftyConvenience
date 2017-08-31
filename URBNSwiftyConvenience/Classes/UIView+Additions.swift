@@ -41,61 +41,65 @@ extension Array where Element == UIView {
 extension UIView {
     
     /// The border at the top of the view
-    public var urbn_topBorder: Border? {
-        set(newBorder) {
+    public var urbn_topBorderStyle: BorderStyle? {
+        set(newBorderStyle) {
+            let newBorder = Border(borderStyle: newBorderStyle)
             addBorder(newBorder, side: .top, key: &UIView.AssociatedKeys.topBorder)
         }
         get {
-            return objc_getAssociatedObject(self, &UIView.AssociatedKeys.topBorder) as? Border
+            return (objc_getAssociatedObject(self, &UIView.AssociatedKeys.topBorder) as? Border)?.borderStyle
         }
     }
     
     /// The border at the bottom of the view
-    public var urbn_bottomBorder: Border? {
-        set(newBorder) {
+    public var urbn_bottomBorderStyle: BorderStyle? {
+        set(newBorderStyle) {
+            let newBorder = Border(borderStyle: newBorderStyle)
             addBorder(newBorder, side: .bottom, key: &UIView.AssociatedKeys.bottomBorder)
         }
         get {
-            return objc_getAssociatedObject(self, &UIView.AssociatedKeys.bottomBorder) as? Border
+            return (objc_getAssociatedObject(self, &UIView.AssociatedKeys.bottomBorder) as? Border)?.borderStyle
         }
     }
     
     /// The border at the leading edge of the view
-    public var urbn_leadingBorder: Border? {
-        set(newBorder) {
+    public var urbn_leadingBorderStyle: BorderStyle? {
+        set(newBorderStyle) {
+            let newBorder = Border(borderStyle: newBorderStyle)
             addBorder(newBorder, side: .leading, key: &UIView.AssociatedKeys.leadingBorder)
         }
         get {
-            return objc_getAssociatedObject(self, &UIView.AssociatedKeys.leadingBorder) as? Border
+            return (objc_getAssociatedObject(self, &UIView.AssociatedKeys.leadingBorder) as? Border)?.borderStyle
         }
     }
     
     /// The border at the trailing edge of the view
-    public var urbn_trailingBorder: Border? {
-        set(newBorder) {
+    public var urbn_trailingBorderStyle: BorderStyle? {
+        set(newBorderStyle) {
+            let newBorder = Border(borderStyle: newBorderStyle)
             addBorder(newBorder, side: .trailing, key: &UIView.AssociatedKeys.trailingBorder)
         }
         get {
-            return objc_getAssociatedObject(self, &UIView.AssociatedKeys.trailingBorder) as? Border
+            return (objc_getAssociatedObject(self, &UIView.AssociatedKeys.trailingBorder) as? Border)?.borderStyle
         }
     }
     
     /// Clears all existing borders
     public func resetBorders() {
-        urbn_topBorder = nil
-        urbn_bottomBorder = nil
-        urbn_leadingBorder = nil
-        urbn_trailingBorder = nil
+        urbn_topBorderStyle = nil
+        urbn_bottomBorderStyle = nil
+        urbn_leadingBorderStyle = nil
+        urbn_trailingBorderStyle = nil
     }
     
     /// Sets all the borders based on 1 border
     ///
     /// - Parameter border: border to set
-    public func setBorder(_ border: Border) {
-        urbn_topBorder = Border(border: border)
-        urbn_bottomBorder = Border(border: border)
-        urbn_leadingBorder = Border(border: border)
-        urbn_trailingBorder = Border(border: border)
+    public func setBorderStyle(_ borderStyle: BorderStyle) {
+        urbn_topBorderStyle = borderStyle
+        urbn_bottomBorderStyle = borderStyle
+        urbn_leadingBorderStyle = borderStyle
+        urbn_trailingBorderStyle = borderStyle
     }
     
     // MARK:- Private

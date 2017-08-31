@@ -11,11 +11,11 @@ import UIKit
 /// Reuseable value type border view model that can be used to initalize a new border instance
 public struct BorderStyle {
     
-    let color: UIColor
-    let pixelWidth: CGFloat
-    let insets: UIEdgeInsets
+    public let color: UIColor
+    public let pixelWidth: CGFloat
+    public let insets: UIEdgeInsets
     
-    init(color: UIColor, pixelWidth: CGFloat = 1, insets: UIEdgeInsets = .zero) {
+    public init(color: UIColor, pixelWidth: CGFloat = 1, insets: UIEdgeInsets = .zero) {
         self.color = color
         self.pixelWidth = pixelWidth
         self.insets = insets
@@ -23,10 +23,12 @@ public struct BorderStyle {
 }
 
 /// Represents a border with a with a width, a color, and insets
-public final class Border: UIView {
+final class Border: UIView {
+    
+    let borderStyle: BorderStyle
     
     /// The width of the border in pixels
-    public var pixelWidth: CGFloat {
+    private var pixelWidth: CGFloat {
         didSet {
             widthConstraint?.constant = pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale)
             setNeedsUpdateConstraints()
@@ -34,7 +36,7 @@ public final class Border: UIView {
     }
     
     /// Insets for the border, used where possible. For instance, on the top border the `insets.bottom` will be ignored
-    public var insets: UIEdgeInsets {
+    private var insets: UIEdgeInsets {
         didSet {
             topConstraint?.constant = insets.top
             bottomConstraint?.constant = -insets.bottom
@@ -57,28 +59,25 @@ public final class Border: UIView {
     /// Creates a border with a color, width, and inset
     ///
     /// - Parameters:
-    ///   - color: color for the border
-    ///   - pixelWidth: the width of the border in pixels (not points)
-    ///   - insets: insets for the border
-    public init(color: UIColor, pixelWidth: CGFloat = 1, insets: UIEdgeInsets = .zero) {
-        self.pixelWidth = pixelWidth
-        self.insets = insets
+    ///   - borderStyle: viewModel containing the following
+    ///     - color: color for the border
+    ///     - pixelWidth: the width of the border in pixels (not points)
+    ///     - insets: insets for the border
+    init?(borderStyle: BorderStyle?) {
+        guard let borderStyle = borderStyle else {
+            return nil
+        }
+        
+        self.borderStyle = borderStyle
+        self.pixelWidth = borderStyle.pixelWidth
+        self.insets = borderStyle.insets
         super.init(frame: .zero)
         
         isUserInteractionEnabled = false
-        self.pixelWidth = pixelWidth
+        self.pixelWidth = borderStyle.pixelWidth
         
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = color
-    }
-    
-    public convenience init(borderStyle: BorderStyle) {
-        self.init(color: borderStyle.color, pixelWidth: borderStyle.pixelWidth, insets: borderStyle.insets)
-    }
-    
-    public convenience init(border: Border) {
-        let color = border.backgroundColor ?? .clear
-        self.init(color: color, pixelWidth: border.pixelWidth, insets: border.insets)
+        backgroundColor = borderStyle.color
     }
     
     required public init?(coder aDecoder: NSCoder) {
