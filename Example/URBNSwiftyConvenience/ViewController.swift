@@ -93,6 +93,12 @@ class ViewController: UIViewController {
         }
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 4.0) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

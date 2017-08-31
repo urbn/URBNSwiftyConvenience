@@ -74,8 +74,6 @@ final class Border: UIView {
         super.init(frame: .zero)
         
         isUserInteractionEnabled = false
-        self.pixelWidth = borderStyle.pixelWidth
-        
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = borderStyle.color
     }
