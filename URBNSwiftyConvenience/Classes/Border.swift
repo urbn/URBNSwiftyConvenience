@@ -8,27 +8,24 @@
 
 import UIKit
 
+/// Reuseable value type border view model that can be used to initalize a new border instance
+public struct BorderStyle {
+    
+    public let color: UIColor
+    public let pixelWidth: CGFloat
+    public let insets: UIEdgeInsets
+    
+    public init(color: UIColor, pixelWidth: CGFloat = 1, insets: UIEdgeInsets = .zero) {
+        self.color = color
+        self.pixelWidth = pixelWidth
+        self.insets = insets
+    }
+}
+
 /// Represents a border with a with a width, a color, and insets
-public final class Border: UIView {
+final class Border: UIView {
     
-    /// The width of the border in pixels
-    public var pixelWidth: CGFloat {
-        didSet {
-            widthConstraint?.constant = pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale)
-            setNeedsUpdateConstraints()
-        }
-    }
-    
-    /// Insets for the border, used where possible. For instance, on the top border the `insets.bottom` will be ignored
-    public var insets: UIEdgeInsets {
-        didSet {
-            topConstraint?.constant = insets.top
-            bottomConstraint?.constant = -insets.bottom
-            leadingConstraint?.constant = insets.left
-            trailingConstraint?.constant = -insets.right
-            setNeedsUpdateConstraints()
-        }
-    }
+    let borderStyle: BorderStyle
     
     private var widthConstraint: NSLayoutConstraint?
     private var bottomConstraint: NSLayoutConstraint?
@@ -43,24 +40,27 @@ public final class Border: UIView {
     /// Creates a border with a color, width, and inset
     ///
     /// - Parameters:
-    ///   - color: color for the border
-    ///   - pixelWidth: the width of the border in pixels (not points)
-    ///   - insets: insets for the border
-    public init(color: UIColor, pixelWidth: CGFloat = 1, insets: UIEdgeInsets = .zero) {
-        self.pixelWidth = pixelWidth
-        self.insets = insets
+    ///   - borderStyle: viewModel containing the following
+    ///     - color: color for the border
+    ///     - pixelWidth: the width of the border in pixels (not points)
+    ///     - insets: insets for the border
+    init?(borderStyle: BorderStyle?) {
+        guard let borderStyle = borderStyle else {
+            return nil
+        }
+        
+        self.borderStyle = borderStyle
         super.init(frame: .zero)
         
-        isUserInteractionEnabled = false
-        self.pixelWidth = pixelWidth
+        widthConstraint?.constant = borderStyle.pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale)
+        topConstraint?.constant = borderStyle.insets.top
+        bottomConstraint?.constant = -borderStyle.insets.bottom
+        leadingConstraint?.constant = borderStyle.insets.left
+        trailingConstraint?.constant = -borderStyle.insets.right
         
+        isUserInteractionEnabled = false
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = color
-    }
-    
-    public convenience init(border: Border) {
-        let color = border.backgroundColor ?? .clear
-        self.init(color: color, pixelWidth: border.pixelWidth, insets: border.insets)
+        backgroundColor = borderStyle.color
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -76,39 +76,39 @@ public final class Border: UIView {
         superview.addSubview(self)
         
         if side != .top {
-            bottomConstraint = bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: -insets.bottom)
+            bottomConstraint = bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: -borderStyle.insets.bottom)
             bottomConstraint?.isActive = true
         }
         
         if side != .bottom {
-            topConstraint = topAnchor.constraint(equalTo: superview.topAnchor, constant: insets.top)
+            topConstraint = topAnchor.constraint(equalTo: superview.topAnchor, constant: borderStyle.insets.top)
             topConstraint?.isActive = true
         }
         
         if side != .leading {
-            trailingConstraint = trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -insets.right)
+            trailingConstraint = trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -borderStyle.insets.right)
             trailingConstraint?.isActive = true
         }
         
         if side != .trailing {
-            leadingConstraint = leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: insets.left)
+            leadingConstraint = leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: borderStyle.insets.left)
             leadingConstraint?.isActive = true
         }
         
         if side == .leading || side == .trailing {
-            widthConstraint = widthAnchor.constraint(equalToConstant: pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale))
+            widthConstraint = widthAnchor.constraint(equalToConstant: borderStyle.pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale))
             widthConstraint?.isActive = true
             setContentHuggingPriority(UILayoutPriorityFittingSizeLevel, for: .vertical)
             setContentCompressionResistancePriority(UILayoutPriorityFittingSizeLevel, for: .vertical)
         }
         else if side == .top || side == .bottom {
-            widthConstraint = heightAnchor.constraint(equalToConstant: pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale))
+            widthConstraint = heightAnchor.constraint(equalToConstant: borderStyle.pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale))
             widthConstraint?.isActive = true
             setContentHuggingPriority(UILayoutPriorityFittingSizeLevel, for: .horizontal)
             setContentCompressionResistancePriority(UILayoutPriorityFittingSizeLevel, for: .horizontal)
         }
         
-        widthConstraint?.constant = pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale)
+        widthConstraint?.constant = borderStyle.pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale)
         setNeedsUpdateConstraints()
     }
 }
