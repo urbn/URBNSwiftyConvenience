@@ -27,25 +27,6 @@ final class Border: UIView {
     
     let borderStyle: BorderStyle
     
-    /// The width of the border in pixels
-    private var pixelWidth: CGFloat {
-        didSet {
-            widthConstraint?.constant = pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale)
-            setNeedsUpdateConstraints()
-        }
-    }
-    
-    /// Insets for the border, used where possible. For instance, on the top border the `insets.bottom` will be ignored
-    private var insets: UIEdgeInsets {
-        didSet {
-            topConstraint?.constant = insets.top
-            bottomConstraint?.constant = -insets.bottom
-            leadingConstraint?.constant = insets.left
-            trailingConstraint?.constant = -insets.right
-            setNeedsUpdateConstraints()
-        }
-    }
-    
     private var widthConstraint: NSLayoutConstraint?
     private var bottomConstraint: NSLayoutConstraint?
     private var topConstraint: NSLayoutConstraint?
@@ -69,9 +50,13 @@ final class Border: UIView {
         }
         
         self.borderStyle = borderStyle
-        self.pixelWidth = borderStyle.pixelWidth
-        self.insets = borderStyle.insets
         super.init(frame: .zero)
+        
+        widthConstraint?.constant = borderStyle.pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale)
+        topConstraint?.constant = borderStyle.insets.top
+        bottomConstraint?.constant = -borderStyle.insets.bottom
+        leadingConstraint?.constant = borderStyle.insets.left
+        trailingConstraint?.constant = -borderStyle.insets.right
         
         isUserInteractionEnabled = false
         translatesAutoresizingMaskIntoConstraints = false
@@ -91,39 +76,39 @@ final class Border: UIView {
         superview.addSubview(self)
         
         if side != .top {
-            bottomConstraint = bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: -insets.bottom)
+            bottomConstraint = bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: -borderStyle.insets.bottom)
             bottomConstraint?.isActive = true
         }
         
         if side != .bottom {
-            topConstraint = topAnchor.constraint(equalTo: superview.topAnchor, constant: insets.top)
+            topConstraint = topAnchor.constraint(equalTo: superview.topAnchor, constant: borderStyle.insets.top)
             topConstraint?.isActive = true
         }
         
         if side != .leading {
-            trailingConstraint = trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -insets.right)
+            trailingConstraint = trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -borderStyle.insets.right)
             trailingConstraint?.isActive = true
         }
         
         if side != .trailing {
-            leadingConstraint = leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: insets.left)
+            leadingConstraint = leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: borderStyle.insets.left)
             leadingConstraint?.isActive = true
         }
         
         if side == .leading || side == .trailing {
-            widthConstraint = widthAnchor.constraint(equalToConstant: pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale))
+            widthConstraint = widthAnchor.constraint(equalToConstant: borderStyle.pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale))
             widthConstraint?.isActive = true
             setContentHuggingPriority(UILayoutPriorityFittingSizeLevel, for: .vertical)
             setContentCompressionResistancePriority(UILayoutPriorityFittingSizeLevel, for: .vertical)
         }
         else if side == .top || side == .bottom {
-            widthConstraint = heightAnchor.constraint(equalToConstant: pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale))
+            widthConstraint = heightAnchor.constraint(equalToConstant: borderStyle.pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale))
             widthConstraint?.isActive = true
             setContentHuggingPriority(UILayoutPriorityFittingSizeLevel, for: .horizontal)
             setContentCompressionResistancePriority(UILayoutPriorityFittingSizeLevel, for: .horizontal)
         }
         
-        widthConstraint?.constant = pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale)
+        widthConstraint?.constant = borderStyle.pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale)
         setNeedsUpdateConstraints()
     }
 }
