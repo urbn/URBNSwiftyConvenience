@@ -34,7 +34,7 @@ final class Border: UIView {
     private var trailingConstraint: NSLayoutConstraint?
 
     private var currentScale: CGFloat {
-        return window?.screen.nativeScale ?? contentScaleFactor
+        return UIScreen.main.scale
     }
     
     /// Creates a border with a color, width, and inset
