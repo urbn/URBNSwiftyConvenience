@@ -10,6 +10,19 @@ import Foundation
 
 extension UIColor {
     
+    /// Create a color from RGBA values as UInt8
+    ///
+    /// This allows creation of colors like:
+    /// `UIColor(redInt: 0xFF, greenInt: 0x00, blueInt: 0x00, alphaInt: 0xFF)`
+    ///
+    /// - Parameters:
+    ///   - redInt: red value between 0x00 and 0xFF
+    ///   - greenInt: green value between 0x00 and 0xFF
+    ///   - blueInt: blue value between 0x00 and 0xFF
+    ///   - alphaInt: alpha value between 0x00 and 0xFF. Defaults to 0xFF
+    ///
+    /// - Notes:
+    ///   - UInt8 prevents us from putting wrong values in.
     public convenience init(redInt: UInt8, greenInt: UInt8, blueInt: UInt8, alphaInt: UInt8 = 0xFF) {
         let r = (CGFloat(redInt) / 255.0)
         let g = (CGFloat(greenInt) / 255.0)
@@ -19,6 +32,12 @@ extension UIColor {
         self.init(red: r, green: g, blue: b, alpha: a)
     }
     
+    /// Creates a color from RGB value.
+    ///
+    /// This allows creation of colors like:
+    /// `UIColor(rgb: 0xFF0000)`
+    ///
+    /// - Parameter rgb: an integer representing RGB values, Hex work the best
     public convenience init(rgb: Int) {
         if rgb > 0xFFFFFF { // outside RGB
             self.init(white: 0.0, alpha: 1.0)
@@ -31,7 +50,16 @@ extension UIColor {
         }
     }
     
-    public convenience init(rgba: Int) {
+    /// Creates a color from RGB value.
+    ///
+    /// This allows creation of colors like:
+    /// `UIColor(rgb: 0xFF00DDFF)`
+    ///
+    /// - Parameter rgba: an integer representing RGB values, Hex work the best
+    ///
+    /// - Notes:
+    ///   -  Has to be Int64 to support 0xFFFFFFFF on 32 bit devices
+    public convenience init(rgba: Int64) {
         if rgba > 0xFFFFFFFF { // outside RGBA
             self.init(white: 0.0, alpha: 1.0)
         }
@@ -44,6 +72,9 @@ extension UIColor {
         }
     }
     
+    /// Returns a random color
+    ///
+    /// - Returns: random UIColor()
     public static func randomColor() -> UIColor {
         let hue: CGFloat = CGFloat(arc4random() % 256) / 256
         let saturation: CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5
