@@ -1,11 +1,11 @@
+platform :ios, '10.0'
+
 use_frameworks!
 
 target 'URBNSwiftyConvenience_Example' do
   pod 'URBNSwiftyConvenience', :path => '../'
+end
 
-  target 'URBNSwiftyConvenience_Tests' do
-    inherit! :search_paths
-
-    
-  end
+target 'URBNSwiftyConvenience_Tests' do
+  pod 'URBNSwiftyConvenience', :path => '../'
 end
