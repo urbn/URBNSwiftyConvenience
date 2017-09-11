@@ -12,10 +12,10 @@ import UIKit
 public struct BorderStyle {
     
     public let color: UIColor
-    public let pixelWidth: CGFloat
+    public let pixelWidth: Int
     public let insets: UIEdgeInsets
     
-    public init(color: UIColor, pixelWidth: CGFloat = 1, insets: UIEdgeInsets = .zero) {
+    public init(color: UIColor, pixelWidth: Int = 1, insets: UIEdgeInsets = .zero) {
         self.color = color
         self.pixelWidth = pixelWidth
         self.insets = insets

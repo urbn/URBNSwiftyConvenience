@@ -19,13 +19,13 @@ extension Array where Element == CGFloat {
     }
 }
 
-extension CGFloat {
+extension Int {
     
     /// Converts pixels to points __safely__
     ///
     /// - Parameter scaleFactor: scale factor of display
     /// - Returns: the number of points that pixel represents in the scale factor
     public func pixelsToPoints(forContentScaleFactor scaleFactor: CGFloat) -> CGFloat {
-        return self / ((scaleFactor > 1) ? scaleFactor : 1.0)
+        return CGFloat(self) / ((scaleFactor > 1) ? scaleFactor : 1.0)
     }
 }
