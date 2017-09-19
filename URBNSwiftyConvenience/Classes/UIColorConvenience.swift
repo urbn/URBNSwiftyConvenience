@@ -8,8 +8,33 @@
 
 import Foundation
 
+extension CharacterSet {
+    public static var hexValues: CharacterSet {
+        return CharacterSet(charactersIn: "0123456789ABCDEFabcdef")
+    }
+}
+
+
 extension UIColor {
     
+    public convenience init(hexString: String) {
+        let sanitized = hexString.components(separatedBy: CharacterSet.hexValues.inverted).joined()
+        let count = sanitized.characters.count
+        var rgb: UInt32 = 0
+        
+        if (count == 6 || count == 8), Scanner(string: sanitized).scanHexInt32(&rgb) {
+            if sanitized.characters.count == 6 {
+                self.init(rgb: rgb)
+            }
+            else {
+                self.init(rgba: rgb)
+            }
+        }
+        else {
+            self.init(rgb: 0)
+        }
+    }
+
     /// Create a color from RGBA values as UInt8
     ///
     /// This allows creation of colors like:
@@ -38,7 +63,7 @@ extension UIColor {
     /// `UIColor(rgb: 0xFF0000)`
     ///
     /// - Parameter rgb: an integer representing RGB values, Hex work the best
-    public convenience init(rgb: Int) {
+    public convenience init(rgb: UInt32) {
         if rgb > 0xFFFFFF { // outside RGB
             self.init(white: 0.0, alpha: 1.0)
         }
@@ -58,18 +83,13 @@ extension UIColor {
     /// - Parameter rgba: an integer representing RGB values, Hex work the best
     ///
     /// - Notes:
-    ///   -  Has to be Int64 to support 0xFFFFFFFF on 32 bit devices
-    public convenience init(rgba: Int64) {
-        if rgba > 0xFFFFFFFF { // outside RGBA
-            self.init(white: 0.0, alpha: 1.0)
-        }
-        else {
-            let r = UInt8((rgba & 0xFF000000) >> 24)
-            let g = UInt8((rgba & 0x00FF0000) >> 16)
-            let b = UInt8((rgba & 0x0000FF00) >> 8)
-            let a = UInt8(rgba & 0x000000FF)
-            self.init(redInt: r, greenInt: g, blueInt: b, alphaInt: a)
-        }
+    ///   -  Has to be UInt32 to support 0xFFFFFFFF on 32 bit devices
+    public convenience init(rgba: UInt32) {
+        let r = UInt8((rgba & 0xFF000000) >> 24)
+        let g = UInt8((rgba & 0x00FF0000) >> 16)
+        let b = UInt8((rgba & 0x0000FF00) >> 8)
+        let a = UInt8(rgba & 0x000000FF)
+        self.init(redInt: r, greenInt: g, blueInt: b, alphaInt: a)
     }
     
     /// Returns a random color
