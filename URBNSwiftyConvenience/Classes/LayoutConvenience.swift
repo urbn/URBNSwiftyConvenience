@@ -32,10 +32,6 @@ public struct InsetConstraints {
                   bottom: (constant: insets.bottom, priority: verticalPriority),
                   right: (constant: insets.right, priority: horizontalPriority))
     }
-    
-    public init(insets: UIEdgeInsets, priority: UILayoutPriority = UILayoutPriorityRequired) {
-        self.init(insets: insets, horizontalPriority: priority, verticalPriority: priority)
-    }
 }
 
 public func activateVFL(format: String, options: NSLayoutFormatOptions = [], metrics: [String : Any]? = nil, views: [String : Any]) {
