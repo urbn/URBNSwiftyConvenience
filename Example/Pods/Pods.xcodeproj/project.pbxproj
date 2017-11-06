@@ -26,6 +26,7 @@
 		9FB2755E535A3592560C71BC178DFDDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		AECF6B6D3D2AA590074356476766260A /* Pods-URBNSwiftyConvenience_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BBF682516806EE15286F31938EF49EB /* Pods-URBNSwiftyConvenience_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C607AE4272EDC8E5D92506AFFC35639A /* Pods-URBNSwiftyConvenience_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59AC2E4D686E6E22125A9CB825FCCB94 /* Pods-URBNSwiftyConvenience_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C76A32EF1FB0D0DA00856428 /* UIViewAnchorConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76A32EE1FB0D0DA00856428 /* UIViewAnchorConvenience.swift */; };
 		C82E3AC5E59893A8E00F26E89A1589AD /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBE7B71E25F1963358808E92E6DDC8 /* QRCodeGenerator.swift */; };
 		CEA30383225638D7320F99FF53DADED3 /* Geometry+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E601C559FEE30F17A2BF4363689632 /* Geometry+Additions.swift */; };
 		D724D73C51C9A0DA3E3BC1C92AA9F52B /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F572C84FF20988723A2D8CB203380BB /* TableViewHelpers.swift */; };
@@ -58,16 +59,16 @@
 		23D2EB0DE355181AA8BC15E9AF74D781 /* DateConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateConvenience.swift; path = URBNSwiftyConvenience/Classes/DateConvenience.swift; sourceTree = "<group>"; };
 		274753C4272E3AF44444E02BD5382149 /* Pods-URBNSwiftyConvenience_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-URBNSwiftyConvenience_Example-dummy.m"; sourceTree = "<group>"; };
 		30F4CD90E42C9B6DFFB09FD34BB5EF68 /* UIImageConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIImageConvenience.swift; path = URBNSwiftyConvenience/Classes/UIImageConvenience.swift; sourceTree = "<group>"; };
-		3AFEABA5D56CBF8EF2A87FE1CA187F75 /* URBNSwiftyConvenience.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = URBNSwiftyConvenience.framework; path = URBNSwiftyConvenience.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B5864F15002767DB941346E9C92ADF0 /* Pods-URBNSwiftyConvenience_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-URBNSwiftyConvenience_Example.modulemap"; sourceTree = "<group>"; };
+		3AFEABA5D56CBF8EF2A87FE1CA187F75 /* URBNSwiftyConvenience.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = URBNSwiftyConvenience.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B5864F15002767DB941346E9C92ADF0 /* Pods-URBNSwiftyConvenience_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-URBNSwiftyConvenience_Example.modulemap"; sourceTree = "<group>"; };
 		40014D79EB7535B2E78325D430DE47BA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41AE7E544D662E4CC0527524CB67556D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F5CBF2E08846FDE4B7311E7AFF8234 /* LayoutConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConvenience.swift; path = URBNSwiftyConvenience/Classes/LayoutConvenience.swift; sourceTree = "<group>"; };
 		44CF880AD229716B7AA2C2BD24A89A6A /* ResultType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResultType.swift; path = URBNSwiftyConvenience/Classes/ResultType.swift; sourceTree = "<group>"; };
-		450516AB19421DFC69B8DF55142FD1D3 /* Pods_URBNSwiftyConvenience_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_URBNSwiftyConvenience_Example.framework; path = "Pods-URBNSwiftyConvenience_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		450516AB19421DFC69B8DF55142FD1D3 /* Pods_URBNSwiftyConvenience_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URBNSwiftyConvenience_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46D7B3CC0C408DD694DBB8C0ED6EE9EB /* Pods-URBNSwiftyConvenience_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-URBNSwiftyConvenience_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4F572C84FF20988723A2D8CB203380BB /* TableViewHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TableViewHelpers.swift; path = URBNSwiftyConvenience/Classes/TableViewHelpers.swift; sourceTree = "<group>"; };
-		5036208AD8BDDF9D61F7E252139EFF45 /* URBNSwiftyConvenience.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = URBNSwiftyConvenience.modulemap; sourceTree = "<group>"; };
+		5036208AD8BDDF9D61F7E252139EFF45 /* URBNSwiftyConvenience.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = URBNSwiftyConvenience.modulemap; sourceTree = "<group>"; };
 		52C7CEE1B8D4B976D264CFE42376A2D2 /* Pods-URBNSwiftyConvenience_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-URBNSwiftyConvenience_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		58E601C559FEE30F17A2BF4363689632 /* Geometry+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Geometry+Additions.swift"; path = "URBNSwiftyConvenience/Classes/Geometry+Additions.swift"; sourceTree = "<group>"; };
 		59AC2E4D686E6E22125A9CB825FCCB94 /* Pods-URBNSwiftyConvenience_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-URBNSwiftyConvenience_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -80,10 +81,10 @@
 		7B26349BE0DDF5B06A04E323FE65EE85 /* AssociatedKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssociatedKey.swift; path = URBNSwiftyConvenience/Classes/AssociatedKey.swift; sourceTree = "<group>"; };
 		7BC9EBD23959136F6F937BADBD657D75 /* Pods-URBNSwiftyConvenience_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-URBNSwiftyConvenience_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		8BBF682516806EE15286F31938EF49EB /* Pods-URBNSwiftyConvenience_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-URBNSwiftyConvenience_Tests-umbrella.h"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		99A7CB59776FF41DDBB940B3DF86625F /* Pods-URBNSwiftyConvenience_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-URBNSwiftyConvenience_Tests-dummy.m"; sourceTree = "<group>"; };
 		9BD1DC90D2E1FC80A194A1C8077F68B8 /* UIView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Additions.swift"; path = "URBNSwiftyConvenience/Classes/UIView+Additions.swift"; sourceTree = "<group>"; };
-		9F7FF6D5557CACD4F94E468584A7F13E /* Pods-URBNSwiftyConvenience_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-URBNSwiftyConvenience_Tests.modulemap"; sourceTree = "<group>"; };
+		9F7FF6D5557CACD4F94E468584A7F13E /* Pods-URBNSwiftyConvenience_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-URBNSwiftyConvenience_Tests.modulemap"; sourceTree = "<group>"; };
 		A325A03535547DBA4EA7508514051CDD /* Pods-URBNSwiftyConvenience_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-URBNSwiftyConvenience_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A3453E182CF91383B39278C4FF25D0B5 /* Pods-URBNSwiftyConvenience_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-URBNSwiftyConvenience_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A4CA04B53E6848E12A60792081323CB3 /* Pods-URBNSwiftyConvenience_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-URBNSwiftyConvenience_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,10 +94,11 @@
 		B866B728D613E5D276A1F644AEBBDB98 /* Border.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Border.swift; path = URBNSwiftyConvenience/Classes/Border.swift; sourceTree = "<group>"; };
 		BA28A9D79ABBDA87BB5E51273FE3A4FE /* Pods-URBNSwiftyConvenience_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-URBNSwiftyConvenience_Example-frameworks.sh"; sourceTree = "<group>"; };
 		C057D993B45A745DE2F0E234F9E92E8D /* Pods-URBNSwiftyConvenience_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-URBNSwiftyConvenience_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C76A32EE1FB0D0DA00856428 /* UIViewAnchorConvenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAnchorConvenience.swift; sourceTree = "<group>"; };
 		E62AC34E4A39662DA9CABCFA467BB37A /* URBNSwiftyConvenience-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URBNSwiftyConvenience-umbrella.h"; sourceTree = "<group>"; };
 		E9433D1612E24E75DC23A75306E1EB9D /* Pods-URBNSwiftyConvenience_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-URBNSwiftyConvenience_Tests-resources.sh"; sourceTree = "<group>"; };
 		ED031D8FCD53D4587C440C7BEC9544E1 /* CollectionViewHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollectionViewHelpers.swift; path = URBNSwiftyConvenience/Classes/CollectionViewHelpers.swift; sourceTree = "<group>"; };
-		F6A41FF5435F89D628CA9B9F01CFF3B4 /* Pods_URBNSwiftyConvenience_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_URBNSwiftyConvenience_Tests.framework; path = "Pods-URBNSwiftyConvenience_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6A41FF5435F89D628CA9B9F01CFF3B4 /* Pods_URBNSwiftyConvenience_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URBNSwiftyConvenience_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				5BDA56E5C77AA01238B9264802A9C700 /* UIColorConvenience.swift */,
 				30F4CD90E42C9B6DFFB09FD34BB5EF68 /* UIImageConvenience.swift */,
 				9BD1DC90D2E1FC80A194A1C8077F68B8 /* UIView+Additions.swift */,
+				C76A32EE1FB0D0DA00856428 /* UIViewAnchorConvenience.swift */,
 				ACB665D53545087DCBA77757BEC7F1DC /* Support Files */,
 			);
 			name = URBNSwiftyConvenience;
@@ -390,6 +393,7 @@
 				C82E3AC5E59893A8E00F26E89A1589AD /* QRCodeGenerator.swift in Sources */,
 				5A63DA334940BDEB447B53188D5B539A /* ResultType.swift in Sources */,
 				05DAEA6F57F85189DD5494AD3BC35FE4 /* SearchableProtocol.swift in Sources */,
+				C76A32EF1FB0D0DA00856428 /* UIViewAnchorConvenience.swift in Sources */,
 				D724D73C51C9A0DA3E3BC1C92AA9F52B /* TableViewHelpers.swift in Sources */,
 				43A630D4319B776212EEC8CBC4D483AB /* UIColorConvenience.swift in Sources */,
 				766F4F08DA043D51B39521FCB269B5B7 /* UIImageConvenience.swift in Sources */,
