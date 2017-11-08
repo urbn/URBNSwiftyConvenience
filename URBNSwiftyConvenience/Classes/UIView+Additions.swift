@@ -10,18 +10,35 @@ import UIKit
 
 extension UIView {
     
+    /// Uses autolayout to embed a subview inside a view with constant inset constraints
+    ///
+    /// - Parameters:
+    ///   - subview: subview to embed
+    ///   - allInsets: constant padding between all edges
+    ///   - useSafeArea: if true, use the safe area guides
+    public func embed(subview: UIView, allInsets: CGFloat = 0, useSafeArea: Bool = false) {
+        embed(subview: subview, insets: UIEdgeInsets(top: allInsets, left: allInsets, bottom: allInsets, right: allInsets), useSafeArea: useSafeArea)
+    }
+
     /// Uses autolayout to embed a subview inside a view with inset constraints
     ///
     /// - Parameters:
     ///   - subview: subview to embed
     ///   - insets: padding between view and superview
-    public func embed(subview: UIView, insets: UIEdgeInsets = .zero) {
+    ///   - useSafeArea: if true, use the safe area guides
+    public func embed(subview: UIView, insets: UIEdgeInsets, useSafeArea: Bool = false) {
         subview.translatesAutoresizingMaskIntoConstraints = false
         addSubview(subview)
-        subview.leadingAnchor.constraint(equalTo: leadingAnchor, constant: insets.left).isActive = true
-        subview.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -insets.right).isActive = true
-        subview.topAnchor.constraint(equalTo: topAnchor, constant: insets.top).isActive = true
-        subview.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -insets.bottom).isActive = true
+        
+        let safeLeading = useSafeArea ? safeAreaLeadingAnchor : leadingAnchor
+        let safeTrailing = useSafeArea ? safeAreaTrailingAnchor : trailingAnchor
+        let safeTop = useSafeArea ? safeAreaTopAnchor : topAnchor
+        let safeBottom = useSafeArea ? safeAreaBottomAnchor : bottomAnchor
+        
+        subview.leadingAnchor.constraint(equalTo: safeLeading, constant: insets.left).isActive = true
+        subview.trailingAnchor.constraint(equalTo: safeTrailing, constant: -insets.right).isActive = true
+        subview.topAnchor.constraint(equalTo: safeTop, constant: insets.top).isActive = true
+        subview.bottomAnchor.constraint(equalTo: safeBottom, constant: -insets.bottom).isActive = true
     }
 }
 
