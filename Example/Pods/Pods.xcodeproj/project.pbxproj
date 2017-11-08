@@ -7,30 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05DAEA6F57F85189DD5494AD3BC35FE4 /* SearchableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78605947F8F32F0B4517BB9C7249FB06 /* SearchableProtocol.swift */; };
 		0A43A818B511F7E791DBBAA79C35210A /* Pods-URBNSwiftyConvenience_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 274753C4272E3AF44444E02BD5382149 /* Pods-URBNSwiftyConvenience_Example-dummy.m */; };
-		1357BE38551F2A5FA594FCFE9B8DC220 /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD1DC90D2E1FC80A194A1C8077F68B8 /* UIView+Additions.swift */; };
 		1CE146BD73C1FDB4B27A17756198F2DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		2830CE7F01450AB6A641B7D4F600A5FE /* AssociatedKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B26349BE0DDF5B06A04E323FE65EE85 /* AssociatedKey.swift */; };
-		2D5F8D488D9831F5D664A0A0F59B6B84 /* LayoutConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F5CBF2E08846FDE4B7311E7AFF8234 /* LayoutConvenience.swift */; };
-		3364F828909D0EAF8386C734E8877438 /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866B728D613E5D276A1F644AEBBDB98 /* Border.swift */; };
-		3568BF15556B45F9F16F10D58C60C787 /* CollectionViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED031D8FCD53D4587C440C7BEC9544E1 /* CollectionViewHelpers.swift */; };
-		43A630D4319B776212EEC8CBC4D483AB /* UIColorConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDA56E5C77AA01238B9264802A9C700 /* UIColorConvenience.swift */; };
-		566F4BC845C73C850D1EA368A1C2A66B /* URBNSwiftyConvenience-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E62AC34E4A39662DA9CABCFA467BB37A /* URBNSwiftyConvenience-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A63DA334940BDEB447B53188D5B539A /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CF880AD229716B7AA2C2BD24A89A6A /* ResultType.swift */; };
+		34367D103168C3C004D4FD9A84154728 /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D422A644C212C588B6B440AF2E5EC0 /* UIView+Additions.swift */; };
+		37019AA1C413A05328D4162BD7FF3373 /* UIColorConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F62916161BAAADCF4EEE8FF756FE9F /* UIColorConvenience.swift */; };
+		3C6E9AE0B0A4828484D8C98E87A0DB8B /* LayoutConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642462A53B2089B2CE16B9AA27BDA2C3 /* LayoutConvenience.swift */; };
+		490ECCB7FF506C9AC8A7E5644F7B68FA /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AB5B73F9B89C4A9B91E1A78605F3D /* TableViewHelpers.swift */; };
+		566F4BC845C73C850D1EA368A1C2A66B /* URBNSwiftyConvenience-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E0F5072CC6499F222ABDF93D4BDAB469 /* URBNSwiftyConvenience-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F7063944CAAE7D015CDB76B3D12BB64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		62A0A9D209D047C04E120056235A3EC7 /* DateConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D2EB0DE355181AA8BC15E9AF74D781 /* DateConvenience.swift */; };
-		7145FBACF849E795C5C97465C553B01D /* NotificationConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F703FE7E92E54EFC964D17FC9956FB /* NotificationConvenience.swift */; };
-		766F4F08DA043D51B39521FCB269B5B7 /* UIImageConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F4CD90E42C9B6DFFB09FD34BB5EF68 /* UIImageConvenience.swift */; };
-		79ECA54C642855E370A938C5103656AD /* DictionaryConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1913AC3663C59E3824DB4A0268B6D /* DictionaryConvenience.swift */; };
+		6685744A308C5F68CCE284C180BEB1A5 /* UIImageConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6425AE02FEB4E33B92053AC4BFDF02B /* UIImageConvenience.swift */; };
+		696064410491C35A2540034FA2DE72CA /* DateConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70C79FDDE4260706C645972AC8B4822 /* DateConvenience.swift */; };
+		8AC72F1AA1D7603F6E885B2C14EC45F5 /* NotificationConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB93053B036A4BF6947934000218B94E /* NotificationConvenience.swift */; };
+		9846E930380EC611EF98305429123389 /* UIViewAnchorConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24190B832BE0DC7CB1CA9813D45F9592 /* UIViewAnchorConvenience.swift */; };
 		9FB2755E535A3592560C71BC178DFDDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		AE776E1D794DC3E117FCB8900226D2E1 /* Geometry+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DA343BD46F4D87AD9ED19EFB7F9B9B /* Geometry+Additions.swift */; };
 		AECF6B6D3D2AA590074356476766260A /* Pods-URBNSwiftyConvenience_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BBF682516806EE15286F31938EF49EB /* Pods-URBNSwiftyConvenience_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AF0FD8FEF027FC14F3031D1183ED06C6 /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A80FB9125AA3E0F28D7332E2A87428 /* QRCodeGenerator.swift */; };
+		B2BC45969EF8F9A97E9718C63A170C88 /* AssociatedKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164CC6255024D8FA3A0F08954B0EE614 /* AssociatedKey.swift */; };
+		BBCEFBD4D1DE262F5C3EFE5520C93B50 /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED60FECED1BC54669F6645FEE3C989C /* Border.swift */; };
+		BC26D07C7CD75F16ED7C88D1FEA7A2FF /* DictionaryConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBEA1B2A46DDE61F11B206C0300FBDA /* DictionaryConvenience.swift */; };
 		C607AE4272EDC8E5D92506AFFC35639A /* Pods-URBNSwiftyConvenience_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59AC2E4D686E6E22125A9CB825FCCB94 /* Pods-URBNSwiftyConvenience_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C76A32EF1FB0D0DA00856428 /* UIViewAnchorConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76A32EE1FB0D0DA00856428 /* UIViewAnchorConvenience.swift */; };
-		C82E3AC5E59893A8E00F26E89A1589AD /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBE7B71E25F1963358808E92E6DDC8 /* QRCodeGenerator.swift */; };
-		CEA30383225638D7320F99FF53DADED3 /* Geometry+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E601C559FEE30F17A2BF4363689632 /* Geometry+Additions.swift */; };
-		D724D73C51C9A0DA3E3BC1C92AA9F52B /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F572C84FF20988723A2D8CB203380BB /* TableViewHelpers.swift */; };
-		F480163026ABD6B0D6F83116B44EC38F /* URBNSwiftyConvenience-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F388EE3E64A366D955673A1DA1ABAB4 /* URBNSwiftyConvenience-dummy.m */; };
+		D2210A1677DF87BDCF1A3D0E407A923D /* URBNSwiftyConvenience-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D9BCE672EB4ECED81ED9F88D2081D5 /* URBNSwiftyConvenience-dummy.m */; };
+		D41B9FC2544B5D35D23D285479D7DDCC /* CollectionViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A271B4DE30B960E50A6B56CC1516FC4 /* CollectionViewHelpers.swift */; };
+		E1A61056ACE5FF13C07D677BB82D7E9A /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2DE0BB2F34697B86177EE8C3F91A0 /* ResultType.swift */; };
+		E779973565BA81D57EBB277132070FF5 /* SearchableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AACB3AF60C1BB5A3E31EBAEEFCC260 /* SearchableProtocol.swift */; };
 		F9BCC99DEFDA96CA53645FC770966250 /* Pods-URBNSwiftyConvenience_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A7CB59776FF41DDBB940B3DF86625F /* Pods-URBNSwiftyConvenience_Tests-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -52,53 +52,53 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04F703FE7E92E54EFC964D17FC9956FB /* NotificationConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationConvenience.swift; path = URBNSwiftyConvenience/Classes/NotificationConvenience.swift; sourceTree = "<group>"; };
-		08BC079CE9554EF21F2AC3F278523B14 /* URBNSwiftyConvenience.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = URBNSwiftyConvenience.xcconfig; sourceTree = "<group>"; };
-		0AA1913AC3663C59E3824DB4A0268B6D /* DictionaryConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DictionaryConvenience.swift; path = URBNSwiftyConvenience/Classes/DictionaryConvenience.swift; sourceTree = "<group>"; };
-		13EBE7B71E25F1963358808E92E6DDC8 /* QRCodeGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeGenerator.swift; path = URBNSwiftyConvenience/Classes/QRCodeGenerator.swift; sourceTree = "<group>"; };
-		23D2EB0DE355181AA8BC15E9AF74D781 /* DateConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateConvenience.swift; path = URBNSwiftyConvenience/Classes/DateConvenience.swift; sourceTree = "<group>"; };
+		07E4F0AF7DF5664CD7C3A5A7EB009302 /* URBNSwiftyConvenience-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URBNSwiftyConvenience-prefix.pch"; sourceTree = "<group>"; };
+		0A271B4DE30B960E50A6B56CC1516FC4 /* CollectionViewHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollectionViewHelpers.swift; path = URBNSwiftyConvenience/Classes/CollectionViewHelpers.swift; sourceTree = "<group>"; };
+		0CBEA1B2A46DDE61F11B206C0300FBDA /* DictionaryConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DictionaryConvenience.swift; path = URBNSwiftyConvenience/Classes/DictionaryConvenience.swift; sourceTree = "<group>"; };
+		164CC6255024D8FA3A0F08954B0EE614 /* AssociatedKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssociatedKey.swift; path = URBNSwiftyConvenience/Classes/AssociatedKey.swift; sourceTree = "<group>"; };
+		24190B832BE0DC7CB1CA9813D45F9592 /* UIViewAnchorConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewAnchorConvenience.swift; path = URBNSwiftyConvenience/Classes/UIViewAnchorConvenience.swift; sourceTree = "<group>"; };
 		274753C4272E3AF44444E02BD5382149 /* Pods-URBNSwiftyConvenience_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-URBNSwiftyConvenience_Example-dummy.m"; sourceTree = "<group>"; };
-		30F4CD90E42C9B6DFFB09FD34BB5EF68 /* UIImageConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIImageConvenience.swift; path = URBNSwiftyConvenience/Classes/UIImageConvenience.swift; sourceTree = "<group>"; };
-		3AFEABA5D56CBF8EF2A87FE1CA187F75 /* URBNSwiftyConvenience.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = URBNSwiftyConvenience.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B5864F15002767DB941346E9C92ADF0 /* Pods-URBNSwiftyConvenience_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-URBNSwiftyConvenience_Example.modulemap"; sourceTree = "<group>"; };
-		40014D79EB7535B2E78325D430DE47BA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2ED60FECED1BC54669F6645FEE3C989C /* Border.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Border.swift; path = URBNSwiftyConvenience/Classes/Border.swift; sourceTree = "<group>"; };
+		32A80FB9125AA3E0F28D7332E2A87428 /* QRCodeGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QRCodeGenerator.swift; path = URBNSwiftyConvenience/Classes/QRCodeGenerator.swift; sourceTree = "<group>"; };
+		3AFEABA5D56CBF8EF2A87FE1CA187F75 /* URBNSwiftyConvenience.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = URBNSwiftyConvenience.framework; path = URBNSwiftyConvenience.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B5864F15002767DB941346E9C92ADF0 /* Pods-URBNSwiftyConvenience_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-URBNSwiftyConvenience_Example.modulemap"; sourceTree = "<group>"; };
 		41AE7E544D662E4CC0527524CB67556D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42F5CBF2E08846FDE4B7311E7AFF8234 /* LayoutConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConvenience.swift; path = URBNSwiftyConvenience/Classes/LayoutConvenience.swift; sourceTree = "<group>"; };
-		44CF880AD229716B7AA2C2BD24A89A6A /* ResultType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResultType.swift; path = URBNSwiftyConvenience/Classes/ResultType.swift; sourceTree = "<group>"; };
-		450516AB19421DFC69B8DF55142FD1D3 /* Pods_URBNSwiftyConvenience_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URBNSwiftyConvenience_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		450516AB19421DFC69B8DF55142FD1D3 /* Pods_URBNSwiftyConvenience_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_URBNSwiftyConvenience_Example.framework; path = "Pods-URBNSwiftyConvenience_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46D7B3CC0C408DD694DBB8C0ED6EE9EB /* Pods-URBNSwiftyConvenience_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-URBNSwiftyConvenience_Example.release.xcconfig"; sourceTree = "<group>"; };
-		4F572C84FF20988723A2D8CB203380BB /* TableViewHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TableViewHelpers.swift; path = URBNSwiftyConvenience/Classes/TableViewHelpers.swift; sourceTree = "<group>"; };
-		5036208AD8BDDF9D61F7E252139EFF45 /* URBNSwiftyConvenience.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = URBNSwiftyConvenience.modulemap; sourceTree = "<group>"; };
+		4E4AB5B73F9B89C4A9B91E1A78605F3D /* TableViewHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TableViewHelpers.swift; path = URBNSwiftyConvenience/Classes/TableViewHelpers.swift; sourceTree = "<group>"; };
 		52C7CEE1B8D4B976D264CFE42376A2D2 /* Pods-URBNSwiftyConvenience_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-URBNSwiftyConvenience_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		58E601C559FEE30F17A2BF4363689632 /* Geometry+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Geometry+Additions.swift"; path = "URBNSwiftyConvenience/Classes/Geometry+Additions.swift"; sourceTree = "<group>"; };
 		59AC2E4D686E6E22125A9CB825FCCB94 /* Pods-URBNSwiftyConvenience_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-URBNSwiftyConvenience_Example-umbrella.h"; sourceTree = "<group>"; };
-		5BDA56E5C77AA01238B9264802A9C700 /* UIColorConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIColorConvenience.swift; path = URBNSwiftyConvenience/Classes/UIColorConvenience.swift; sourceTree = "<group>"; };
+		642462A53B2089B2CE16B9AA27BDA2C3 /* LayoutConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConvenience.swift; path = URBNSwiftyConvenience/Classes/LayoutConvenience.swift; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6F388EE3E64A366D955673A1DA1ABAB4 /* URBNSwiftyConvenience-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "URBNSwiftyConvenience-dummy.m"; sourceTree = "<group>"; };
 		6F6C2C81AE788DDD17B3A0D166D08D78 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		78605947F8F32F0B4517BB9C7249FB06 /* SearchableProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SearchableProtocol.swift; path = URBNSwiftyConvenience/Classes/SearchableProtocol.swift; sourceTree = "<group>"; };
-		78E71B06F42412B12C1270D3570A6CB8 /* URBNSwiftyConvenience-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URBNSwiftyConvenience-prefix.pch"; sourceTree = "<group>"; };
-		7B26349BE0DDF5B06A04E323FE65EE85 /* AssociatedKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssociatedKey.swift; path = URBNSwiftyConvenience/Classes/AssociatedKey.swift; sourceTree = "<group>"; };
 		7BC9EBD23959136F6F937BADBD657D75 /* Pods-URBNSwiftyConvenience_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-URBNSwiftyConvenience_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		89F62916161BAAADCF4EEE8FF756FE9F /* UIColorConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIColorConvenience.swift; path = URBNSwiftyConvenience/Classes/UIColorConvenience.swift; sourceTree = "<group>"; };
 		8BBF682516806EE15286F31938EF49EB /* Pods-URBNSwiftyConvenience_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-URBNSwiftyConvenience_Tests-umbrella.h"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		980E0DF06F7E29DE738340C5EA57564E /* URBNSwiftyConvenience.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = URBNSwiftyConvenience.xcconfig; sourceTree = "<group>"; };
 		99A7CB59776FF41DDBB940B3DF86625F /* Pods-URBNSwiftyConvenience_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-URBNSwiftyConvenience_Tests-dummy.m"; sourceTree = "<group>"; };
-		9BD1DC90D2E1FC80A194A1C8077F68B8 /* UIView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Additions.swift"; path = "URBNSwiftyConvenience/Classes/UIView+Additions.swift"; sourceTree = "<group>"; };
-		9F7FF6D5557CACD4F94E468584A7F13E /* Pods-URBNSwiftyConvenience_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-URBNSwiftyConvenience_Tests.modulemap"; sourceTree = "<group>"; };
+		9F7FF6D5557CACD4F94E468584A7F13E /* Pods-URBNSwiftyConvenience_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-URBNSwiftyConvenience_Tests.modulemap"; sourceTree = "<group>"; };
 		A325A03535547DBA4EA7508514051CDD /* Pods-URBNSwiftyConvenience_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-URBNSwiftyConvenience_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A3453E182CF91383B39278C4FF25D0B5 /* Pods-URBNSwiftyConvenience_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-URBNSwiftyConvenience_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		A41B5B3BEF63F185E89B5FC78D766DDA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4CA04B53E6848E12A60792081323CB3 /* Pods-URBNSwiftyConvenience_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-URBNSwiftyConvenience_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		A6425AE02FEB4E33B92053AC4BFDF02B /* UIImageConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIImageConvenience.swift; path = URBNSwiftyConvenience/Classes/UIImageConvenience.swift; sourceTree = "<group>"; };
 		A6A20A88CAFE17561BDC5ACFB589BF4E /* Pods-URBNSwiftyConvenience_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-URBNSwiftyConvenience_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A70C79FDDE4260706C645972AC8B4822 /* DateConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateConvenience.swift; path = URBNSwiftyConvenience/Classes/DateConvenience.swift; sourceTree = "<group>"; };
 		AB14A08FA92EFEF7CC5DE0909B001182 /* Pods-URBNSwiftyConvenience_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-URBNSwiftyConvenience_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		ABE394F623910C74EB9C5BCAACC9B72D /* URBNSwiftyConvenience.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = URBNSwiftyConvenience.modulemap; sourceTree = "<group>"; };
 		AC094B8AD489CE1F1AD5BA5D45054FEE /* Pods-URBNSwiftyConvenience_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-URBNSwiftyConvenience_Example-resources.sh"; sourceTree = "<group>"; };
-		B866B728D613E5D276A1F644AEBBDB98 /* Border.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Border.swift; path = URBNSwiftyConvenience/Classes/Border.swift; sourceTree = "<group>"; };
 		BA28A9D79ABBDA87BB5E51273FE3A4FE /* Pods-URBNSwiftyConvenience_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-URBNSwiftyConvenience_Example-frameworks.sh"; sourceTree = "<group>"; };
 		C057D993B45A745DE2F0E234F9E92E8D /* Pods-URBNSwiftyConvenience_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-URBNSwiftyConvenience_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		C76A32EE1FB0D0DA00856428 /* UIViewAnchorConvenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAnchorConvenience.swift; sourceTree = "<group>"; };
-		E62AC34E4A39662DA9CABCFA467BB37A /* URBNSwiftyConvenience-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URBNSwiftyConvenience-umbrella.h"; sourceTree = "<group>"; };
+		C6D422A644C212C588B6B440AF2E5EC0 /* UIView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Additions.swift"; path = "URBNSwiftyConvenience/Classes/UIView+Additions.swift"; sourceTree = "<group>"; };
+		CB93053B036A4BF6947934000218B94E /* NotificationConvenience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationConvenience.swift; path = URBNSwiftyConvenience/Classes/NotificationConvenience.swift; sourceTree = "<group>"; };
+		E0F5072CC6499F222ABDF93D4BDAB469 /* URBNSwiftyConvenience-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URBNSwiftyConvenience-umbrella.h"; sourceTree = "<group>"; };
 		E9433D1612E24E75DC23A75306E1EB9D /* Pods-URBNSwiftyConvenience_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-URBNSwiftyConvenience_Tests-resources.sh"; sourceTree = "<group>"; };
-		ED031D8FCD53D4587C440C7BEC9544E1 /* CollectionViewHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollectionViewHelpers.swift; path = URBNSwiftyConvenience/Classes/CollectionViewHelpers.swift; sourceTree = "<group>"; };
-		F6A41FF5435F89D628CA9B9F01CFF3B4 /* Pods_URBNSwiftyConvenience_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URBNSwiftyConvenience_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0AACB3AF60C1BB5A3E31EBAEEFCC260 /* SearchableProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SearchableProtocol.swift; path = URBNSwiftyConvenience/Classes/SearchableProtocol.swift; sourceTree = "<group>"; };
+		F5D9BCE672EB4ECED81ED9F88D2081D5 /* URBNSwiftyConvenience-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "URBNSwiftyConvenience-dummy.m"; sourceTree = "<group>"; };
+		F6A41FF5435F89D628CA9B9F01CFF3B4 /* Pods_URBNSwiftyConvenience_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_URBNSwiftyConvenience_Tests.framework; path = "Pods-URBNSwiftyConvenience_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9DA343BD46F4D87AD9ED19EFB7F9B9B /* Geometry+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Geometry+Additions.swift"; path = "URBNSwiftyConvenience/Classes/Geometry+Additions.swift"; sourceTree = "<group>"; };
+		FBA2DE0BB2F34697B86177EE8C3F91A0 /* ResultType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResultType.swift; path = URBNSwiftyConvenience/Classes/ResultType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,37 +129,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		26110AF7851BBDEC8540C6C75864B69B /* URBNSwiftyConvenience */ = {
+		23083BD9FA38302AD2A4BFB9847B9F4F /* URBNSwiftyConvenience */ = {
 			isa = PBXGroup;
 			children = (
-				7B26349BE0DDF5B06A04E323FE65EE85 /* AssociatedKey.swift */,
-				B866B728D613E5D276A1F644AEBBDB98 /* Border.swift */,
-				ED031D8FCD53D4587C440C7BEC9544E1 /* CollectionViewHelpers.swift */,
-				23D2EB0DE355181AA8BC15E9AF74D781 /* DateConvenience.swift */,
-				0AA1913AC3663C59E3824DB4A0268B6D /* DictionaryConvenience.swift */,
-				58E601C559FEE30F17A2BF4363689632 /* Geometry+Additions.swift */,
-				42F5CBF2E08846FDE4B7311E7AFF8234 /* LayoutConvenience.swift */,
-				04F703FE7E92E54EFC964D17FC9956FB /* NotificationConvenience.swift */,
-				13EBE7B71E25F1963358808E92E6DDC8 /* QRCodeGenerator.swift */,
-				44CF880AD229716B7AA2C2BD24A89A6A /* ResultType.swift */,
-				78605947F8F32F0B4517BB9C7249FB06 /* SearchableProtocol.swift */,
-				4F572C84FF20988723A2D8CB203380BB /* TableViewHelpers.swift */,
-				5BDA56E5C77AA01238B9264802A9C700 /* UIColorConvenience.swift */,
-				30F4CD90E42C9B6DFFB09FD34BB5EF68 /* UIImageConvenience.swift */,
-				9BD1DC90D2E1FC80A194A1C8077F68B8 /* UIView+Additions.swift */,
-				C76A32EE1FB0D0DA00856428 /* UIViewAnchorConvenience.swift */,
-				ACB665D53545087DCBA77757BEC7F1DC /* Support Files */,
+				164CC6255024D8FA3A0F08954B0EE614 /* AssociatedKey.swift */,
+				2ED60FECED1BC54669F6645FEE3C989C /* Border.swift */,
+				0A271B4DE30B960E50A6B56CC1516FC4 /* CollectionViewHelpers.swift */,
+				A70C79FDDE4260706C645972AC8B4822 /* DateConvenience.swift */,
+				0CBEA1B2A46DDE61F11B206C0300FBDA /* DictionaryConvenience.swift */,
+				F9DA343BD46F4D87AD9ED19EFB7F9B9B /* Geometry+Additions.swift */,
+				642462A53B2089B2CE16B9AA27BDA2C3 /* LayoutConvenience.swift */,
+				CB93053B036A4BF6947934000218B94E /* NotificationConvenience.swift */,
+				32A80FB9125AA3E0F28D7332E2A87428 /* QRCodeGenerator.swift */,
+				FBA2DE0BB2F34697B86177EE8C3F91A0 /* ResultType.swift */,
+				F0AACB3AF60C1BB5A3E31EBAEEFCC260 /* SearchableProtocol.swift */,
+				4E4AB5B73F9B89C4A9B91E1A78605F3D /* TableViewHelpers.swift */,
+				89F62916161BAAADCF4EEE8FF756FE9F /* UIColorConvenience.swift */,
+				A6425AE02FEB4E33B92053AC4BFDF02B /* UIImageConvenience.swift */,
+				C6D422A644C212C588B6B440AF2E5EC0 /* UIView+Additions.swift */,
+				24190B832BE0DC7CB1CA9813D45F9592 /* UIViewAnchorConvenience.swift */,
+				2D9598A3BD6A64725E447392BE8F234A /* Support Files */,
 			);
 			name = URBNSwiftyConvenience;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		458D9ED393FD7BBDD7029CF1F729EF31 /* Development Pods */ = {
+		2D9598A3BD6A64725E447392BE8F234A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				26110AF7851BBDEC8540C6C75864B69B /* URBNSwiftyConvenience */,
+				A41B5B3BEF63F185E89B5FC78D766DDA /* Info.plist */,
+				ABE394F623910C74EB9C5BCAACC9B72D /* URBNSwiftyConvenience.modulemap */,
+				980E0DF06F7E29DE738340C5EA57564E /* URBNSwiftyConvenience.xcconfig */,
+				F5D9BCE672EB4ECED81ED9F88D2081D5 /* URBNSwiftyConvenience-dummy.m */,
+				07E4F0AF7DF5664CD7C3A5A7EB009302 /* URBNSwiftyConvenience-prefix.pch */,
+				E0F5072CC6499F222ABDF93D4BDAB469 /* URBNSwiftyConvenience-umbrella.h */,
 			);
-			name = "Development Pods";
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/URBNSwiftyConvenience";
 			sourceTree = "<group>";
 		};
 		4CC2BAA82F4BC231216FFDF480FD0E81 /* Products */ = {
@@ -172,11 +178,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7A6A2F0C3F5B289FA4D235D95B638449 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				23083BD9FA38302AD2A4BFB9847B9F4F /* URBNSwiftyConvenience */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				458D9ED393FD7BBDD7029CF1F729EF31 /* Development Pods */,
+				7A6A2F0C3F5B289FA4D235D95B638449 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				4CC2BAA82F4BC231216FFDF480FD0E81 /* Products */,
 				EB46B72C87F8CA5BC2B6174F31D751EC /* Targets Support Files */,
@@ -199,20 +213,6 @@
 			);
 			name = "Pods-URBNSwiftyConvenience_Example";
 			path = "Target Support Files/Pods-URBNSwiftyConvenience_Example";
-			sourceTree = "<group>";
-		};
-		ACB665D53545087DCBA77757BEC7F1DC /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				40014D79EB7535B2E78325D430DE47BA /* Info.plist */,
-				5036208AD8BDDF9D61F7E252139EFF45 /* URBNSwiftyConvenience.modulemap */,
-				08BC079CE9554EF21F2AC3F278523B14 /* URBNSwiftyConvenience.xcconfig */,
-				6F388EE3E64A366D955673A1DA1ABAB4 /* URBNSwiftyConvenience-dummy.m */,
-				78E71B06F42412B12C1270D3570A6CB8 /* URBNSwiftyConvenience-prefix.pch */,
-				E62AC34E4A39662DA9CABCFA467BB37A /* URBNSwiftyConvenience-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/URBNSwiftyConvenience";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -292,7 +292,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB094134F916CE5AEA6D44DDF2DC7129 /* Build configuration list for PBXNativeTarget "URBNSwiftyConvenience" */;
 			buildPhases = (
-				38127BCFD58BAE6A0127675F0705952E /* Sources */,
+				D5B9F49D8F51425E36A658EA481D7BD8 /* Sources */,
 				D470C67E1B5CFB685B0E93856042A97E /* Frameworks */,
 				2DBB27C2F9012C14C498E9DCA6970A25 /* Headers */,
 			);
@@ -378,35 +378,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		38127BCFD58BAE6A0127675F0705952E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2830CE7F01450AB6A641B7D4F600A5FE /* AssociatedKey.swift in Sources */,
-				3364F828909D0EAF8386C734E8877438 /* Border.swift in Sources */,
-				3568BF15556B45F9F16F10D58C60C787 /* CollectionViewHelpers.swift in Sources */,
-				62A0A9D209D047C04E120056235A3EC7 /* DateConvenience.swift in Sources */,
-				79ECA54C642855E370A938C5103656AD /* DictionaryConvenience.swift in Sources */,
-				CEA30383225638D7320F99FF53DADED3 /* Geometry+Additions.swift in Sources */,
-				2D5F8D488D9831F5D664A0A0F59B6B84 /* LayoutConvenience.swift in Sources */,
-				7145FBACF849E795C5C97465C553B01D /* NotificationConvenience.swift in Sources */,
-				C82E3AC5E59893A8E00F26E89A1589AD /* QRCodeGenerator.swift in Sources */,
-				5A63DA334940BDEB447B53188D5B539A /* ResultType.swift in Sources */,
-				05DAEA6F57F85189DD5494AD3BC35FE4 /* SearchableProtocol.swift in Sources */,
-				C76A32EF1FB0D0DA00856428 /* UIViewAnchorConvenience.swift in Sources */,
-				D724D73C51C9A0DA3E3BC1C92AA9F52B /* TableViewHelpers.swift in Sources */,
-				43A630D4319B776212EEC8CBC4D483AB /* UIColorConvenience.swift in Sources */,
-				766F4F08DA043D51B39521FCB269B5B7 /* UIImageConvenience.swift in Sources */,
-				1357BE38551F2A5FA594FCFE9B8DC220 /* UIView+Additions.swift in Sources */,
-				F480163026ABD6B0D6F83116B44EC38F /* URBNSwiftyConvenience-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4FFC24065126B8E6AD97782B4357388B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0A43A818B511F7E791DBBAA79C35210A /* Pods-URBNSwiftyConvenience_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5B9F49D8F51425E36A658EA481D7BD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2BC45969EF8F9A97E9718C63A170C88 /* AssociatedKey.swift in Sources */,
+				BBCEFBD4D1DE262F5C3EFE5520C93B50 /* Border.swift in Sources */,
+				D41B9FC2544B5D35D23D285479D7DDCC /* CollectionViewHelpers.swift in Sources */,
+				696064410491C35A2540034FA2DE72CA /* DateConvenience.swift in Sources */,
+				BC26D07C7CD75F16ED7C88D1FEA7A2FF /* DictionaryConvenience.swift in Sources */,
+				AE776E1D794DC3E117FCB8900226D2E1 /* Geometry+Additions.swift in Sources */,
+				3C6E9AE0B0A4828484D8C98E87A0DB8B /* LayoutConvenience.swift in Sources */,
+				8AC72F1AA1D7603F6E885B2C14EC45F5 /* NotificationConvenience.swift in Sources */,
+				AF0FD8FEF027FC14F3031D1183ED06C6 /* QRCodeGenerator.swift in Sources */,
+				E1A61056ACE5FF13C07D677BB82D7E9A /* ResultType.swift in Sources */,
+				E779973565BA81D57EBB277132070FF5 /* SearchableProtocol.swift in Sources */,
+				490ECCB7FF506C9AC8A7E5644F7B68FA /* TableViewHelpers.swift in Sources */,
+				37019AA1C413A05328D4162BD7FF3373 /* UIColorConvenience.swift in Sources */,
+				6685744A308C5F68CCE284C180BEB1A5 /* UIImageConvenience.swift in Sources */,
+				34367D103168C3C004D4FD9A84154728 /* UIView+Additions.swift in Sources */,
+				9846E930380EC611EF98305429123389 /* UIViewAnchorConvenience.swift in Sources */,
+				D2210A1677DF87BDCF1A3D0E407A923D /* URBNSwiftyConvenience-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,7 +546,7 @@
 		};
 		6C3A7B81240FBB3B9DE8003EA813AF3E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 08BC079CE9554EF21F2AC3F278523B14 /* URBNSwiftyConvenience.xcconfig */;
+			baseConfigurationReference = 980E0DF06F7E29DE738340C5EA57564E /* URBNSwiftyConvenience.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -668,7 +668,7 @@
 		};
 		A4924BA356A6C1AE10EABEF6CD1C65C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 08BC079CE9554EF21F2AC3F278523B14 /* URBNSwiftyConvenience.xcconfig */;
+			baseConfigurationReference = 980E0DF06F7E29DE738340C5EA57564E /* URBNSwiftyConvenience.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
