@@ -8,20 +8,53 @@
 
 import UIKit
 
+public struct SafeAreaEdges: OptionSet {
+    public static let leading = SafeAreaEdges(rawValue: 1 << 0)
+    public static let top = SafeAreaEdges(rawValue: 1 << 1)
+    public static let trailing = SafeAreaEdges(rawValue: 1 << 2)
+    public static let bottom = SafeAreaEdges(rawValue: 1 << 3)
+    
+    public static let all: SafeAreaEdges = [.leading, .top, .trailing, .bottom]
+    public static let none: SafeAreaEdges = []
+    
+    public let rawValue: Int
+    public init(rawValue: Int) {
+        self.rawValue = rawValue
+    }
+}
+
+
 extension UIView {
     
+    /// Uses autolayout to embed a subview inside a view with constant inset constraints
+    ///
+    /// - Parameters:
+    ///   - subview: subview to embed
+    ///   - allInsets: constant padding between all edges
+    ///   - useSafeArea: if true, use the safe area guides
+    public func embed(subview: UIView, allInsets: CGFloat = 0, safeAreaEdges: SafeAreaEdges = .none) {
+        embed(subview: subview, insets: UIEdgeInsets(top: allInsets, left: allInsets, bottom: allInsets, right: allInsets), safeAreaEdges: safeAreaEdges)
+    }
+
     /// Uses autolayout to embed a subview inside a view with inset constraints
     ///
     /// - Parameters:
     ///   - subview: subview to embed
     ///   - insets: padding between view and superview
-    public func embed(subview: UIView, insets: UIEdgeInsets = .zero) {
+    ///   - useSafeArea: if true, use the safe area guides
+    public func embed(subview: UIView, insets: UIEdgeInsets, safeAreaEdges: SafeAreaEdges = .none) {
         subview.translatesAutoresizingMaskIntoConstraints = false
         addSubview(subview)
-        subview.leadingAnchor.constraint(equalTo: leadingAnchor, constant: insets.left).isActive = true
-        subview.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -insets.right).isActive = true
-        subview.topAnchor.constraint(equalTo: topAnchor, constant: insets.top).isActive = true
-        subview.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -insets.bottom).isActive = true
+        
+        let safeLeading = safeAreaEdges.contains(.leading) ? safeAreaLeadingAnchor : leadingAnchor
+        let safeTrailing = safeAreaEdges.contains(.trailing) ? safeAreaTrailingAnchor : trailingAnchor
+        let safeTop = safeAreaEdges.contains(.top) ? safeAreaTopAnchor : topAnchor
+        let safeBottom = safeAreaEdges.contains(.bottom) ? safeAreaBottomAnchor : bottomAnchor
+        
+        subview.leadingAnchor.constraint(equalTo: safeLeading, constant: insets.left).isActive = true
+        subview.trailingAnchor.constraint(equalTo: safeTrailing, constant: -insets.right).isActive = true
+        subview.topAnchor.constraint(equalTo: safeTop, constant: insets.top).isActive = true
+        subview.bottomAnchor.constraint(equalTo: safeBottom, constant: -insets.bottom).isActive = true
     }
 }
 
