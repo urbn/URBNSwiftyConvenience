@@ -8,18 +8,21 @@
 
 import Foundation
 
-public typealias InsetConstraint = (constant: CGFloat, priority: UILayoutPriority)
-fileprivate var defaultInsetConstraint: InsetConstraint {
-    return (constant: 0.0, priority: UILayoutPriorityRequired)
+public struct InsetConstraint {
+    public static let `default` = InsetConstraint(constant: 0.0, priority: .required)
+    
+    let constant: CGFloat
+    let priority: UILayoutPriority
 }
 
 public struct InsetConstraints {
+    
     public var top: InsetConstraint
     public var left: InsetConstraint
     public var right: InsetConstraint
     public var bottom: InsetConstraint
     
-    public init(top: InsetConstraint = defaultInsetConstraint, left: InsetConstraint = defaultInsetConstraint, bottom: InsetConstraint = defaultInsetConstraint, right: InsetConstraint = defaultInsetConstraint) {
+    public init(top: InsetConstraint = .default, left: InsetConstraint = .default, bottom: InsetConstraint = .default, right: InsetConstraint = .default) {
         self.top = top
         self.left = left
         self.bottom = bottom
@@ -27,13 +30,13 @@ public struct InsetConstraints {
     }
     
     public init(insets: UIEdgeInsets, horizontalPriority: UILayoutPriority, verticalPriority: UILayoutPriority) {
-        self.init(top: (constant: insets.top, priority: verticalPriority),
-                  left: (constant: insets.left, priority: horizontalPriority),
-                  bottom: (constant: insets.bottom, priority: verticalPriority),
-                  right: (constant: insets.right, priority: horizontalPriority))
+        self.init(top: InsetConstraint(constant: insets.top, priority: verticalPriority),
+                  left: InsetConstraint(constant: insets.left, priority: horizontalPriority),
+                  bottom: InsetConstraint(constant: insets.bottom, priority: verticalPriority),
+                  right: InsetConstraint(constant: insets.right, priority: horizontalPriority))
     }
     
-    public init(insets: UIEdgeInsets, priority: UILayoutPriority = UILayoutPriorityRequired) {
+    public init(insets: UIEdgeInsets, priority: UILayoutPriority = .required) {
         self.init(insets: insets, horizontalPriority: priority, verticalPriority: priority)
     }
 }
