@@ -9,7 +9,7 @@ import Foundation
 
 /// Support safe area layout guides on supported platforms
 ///
-extension UIView {
+public extension UIView {
     var safeAreaBottomAnchor: NSLayoutYAxisAnchor {
         if #available(iOS 11, tvOS 11, *) {
             return safeAreaLayoutGuide.bottomAnchor
