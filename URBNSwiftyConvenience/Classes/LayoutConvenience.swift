@@ -138,6 +138,8 @@ public extension UIStackView {
 
 public extension NSLayoutConstraint {
     
+    // TODO: Refactor out when we move to swifty 4
+    //       Also we could adopt add & subtract capability similar to - https://useyourloaf.com/blog/easier-swift-layout-priorities/
     public enum ConstraintPriority {
         case low
         case high
