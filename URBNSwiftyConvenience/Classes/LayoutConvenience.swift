@@ -140,28 +140,21 @@ public extension NSLayoutConstraint {
     
     // TODO: Refactor out when we move to swifty 4
     //       Also we could adopt add & subtract capability similar to - https://useyourloaf.com/blog/easier-swift-layout-priorities/
-    public enum ConstraintPriority {
-        case low
-        case high
-        case required
-        case custom(priority: Float)
+    public struct ConstraintPriority {
         
-        var value: Float {
-            switch self {
-            case .low:
-                return UILayoutPriorityDefaultLow
-            case .high:
-                return UILayoutPriorityDefaultHigh
-            case .required:
-                return UILayoutPriorityDefaultHigh
-            case .custom(let priority):
-                return priority
-            }
+        public static let defaultLow: ConstraintPriority = ConstraintPriority(priority: UILayoutPriorityDefaultLow)
+        public static let defaultHigh: ConstraintPriority = ConstraintPriority(priority: UILayoutPriorityDefaultHigh)
+        public static let required: ConstraintPriority = ConstraintPriority(priority: UILayoutPriorityDefaultHigh)
+        
+        let priority: Float
+        
+        public init(priority: Float) {
+            self.priority = priority
         }
     }
     
-    public func activate(withPriority priority: ConstraintPriority) {
-        self.priority = priority.value
+    public func activate(withPriority constraintPriority: ConstraintPriority) {
+        self.priority = constraintPriority.priority
         isActive = true
     }
 }
