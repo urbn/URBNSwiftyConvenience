@@ -96,9 +96,9 @@ class ViewController: UIViewController {
         constraintPriorityTestView.backgroundColor = .blue
         view.addSubviewsWithNoConstraints(constraintPriorityTestView)
         constraintPriorityTestView.topAnchor.constraint(equalTo: view.topAnchor).activate(withPriority: .defaultLow)
-        constraintPriorityTestView.leftAnchor.constraint(equalTo: view.leftAnchor).activate(withPriority: .defaultHigh)
+        constraintPriorityTestView.leftAnchor.constraint(equalTo: view.leftAnchor).activate(withPriority: .defaultHigh + 1)
         constraintPriorityTestView.widthAnchor.constraint(equalToConstant: 42.0).activate(withPriority: .required)
-        constraintPriorityTestView.heightAnchor.constraint(equalToConstant: 42.0).activate(withPriority: ConstraintPriority(priority: UILayoutPriorityDefaultHigh))
+        constraintPriorityTestView.heightAnchor.constraint(equalToConstant: 42.0).activate(withPriority: ConstraintPriority(UILayoutPriorityDefaultHigh - 1))
     }
 
     override func viewDidAppear(_ animated: Bool) {
