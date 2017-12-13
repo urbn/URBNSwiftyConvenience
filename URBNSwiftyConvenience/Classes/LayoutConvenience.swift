@@ -142,7 +142,7 @@ public struct ConstraintPriority {
     
     public static let defaultLow: ConstraintPriority = ConstraintPriority(priority: UILayoutPriorityDefaultLow)
     public static let defaultHigh: ConstraintPriority = ConstraintPriority(priority: UILayoutPriorityDefaultHigh)
-    public static let required: ConstraintPriority = ConstraintPriority(priority: UILayoutPriorityDefaultHigh)
+    public static let required: ConstraintPriority = ConstraintPriority(priority: UILayoutPriorityRequired)
     
     let priority: Float
     
