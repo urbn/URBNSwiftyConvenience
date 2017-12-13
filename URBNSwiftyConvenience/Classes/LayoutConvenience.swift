@@ -136,22 +136,22 @@ public extension UIStackView {
     }
 }
 
-public extension NSLayoutConstraint {
+// TODO: Refactor out when we move to swifty 4
+//       Also we could adopt add & subtract capability similar to - https://useyourloaf.com/blog/easier-swift-layout-priorities/
+public struct ConstraintPriority {
     
-    // TODO: Refactor out when we move to swifty 4
-    //       Also we could adopt add & subtract capability similar to - https://useyourloaf.com/blog/easier-swift-layout-priorities/
-    public struct ConstraintPriority {
-        
-        public static let defaultLow: ConstraintPriority = ConstraintPriority(priority: UILayoutPriorityDefaultLow)
-        public static let defaultHigh: ConstraintPriority = ConstraintPriority(priority: UILayoutPriorityDefaultHigh)
-        public static let required: ConstraintPriority = ConstraintPriority(priority: UILayoutPriorityDefaultHigh)
-        
-        let priority: Float
-        
-        public init(priority: Float) {
-            self.priority = priority
-        }
+    public static let defaultLow: ConstraintPriority = ConstraintPriority(priority: UILayoutPriorityDefaultLow)
+    public static let defaultHigh: ConstraintPriority = ConstraintPriority(priority: UILayoutPriorityDefaultHigh)
+    public static let required: ConstraintPriority = ConstraintPriority(priority: UILayoutPriorityDefaultHigh)
+    
+    let priority: Float
+    
+    public init(priority: Float) {
+        self.priority = priority
     }
+}
+
+public extension NSLayoutConstraint {
     
     public func activate(withPriority constraintPriority: ConstraintPriority) {
         self.priority = constraintPriority.priority
