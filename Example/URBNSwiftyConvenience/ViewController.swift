@@ -91,6 +91,14 @@ class ViewController: UIViewController {
             animateBorder.widthAnchor.constraint(equalToConstant: 300).isActive = true
             animateBorder.topAnchor.constraint(equalTo: clearBorder.bottomAnchor, constant: 40).isActive = true
         }
+        
+        let constraintPriorityTestView = UIView()
+        constraintPriorityTestView.backgroundColor = .blue
+        view.addSubviewsWithNoConstraints(constraintPriorityTestView)
+        constraintPriorityTestView.topAnchor.constraint(equalTo: view.topAnchor).activate(withPriority: .low)
+        constraintPriorityTestView.leftAnchor.constraint(equalTo: view.leftAnchor).activate(withPriority: .high)
+        constraintPriorityTestView.widthAnchor.constraint(equalToConstant: 42.0).activate(withPriority: .required)
+        constraintPriorityTestView.heightAnchor.constraint(equalToConstant: 42.0).activate(withPriority: .custom(priority: UILayoutPriorityDefaultHigh))
     }
 
     override func viewDidAppear(_ animated: Bool) {

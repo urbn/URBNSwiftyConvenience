@@ -135,3 +135,31 @@ public extension UIStackView {
         }
     }
 }
+
+public extension NSLayoutConstraint {
+    
+    public enum ConstraintPriority {
+        case low
+        case high
+        case required
+        case custom(priority: Float)
+        
+        var value: Float {
+            switch self {
+            case .low:
+                return UILayoutPriorityDefaultLow
+            case .high:
+                return UILayoutPriorityDefaultHigh
+            case .required:
+                return UILayoutPriorityDefaultHigh
+            case .custom(let priority):
+                return priority
+            }
+        }
+    }
+    
+    public func activate(withPriority priority: ConstraintPriority) {
+        self.priority = priority.value
+        isActive = true
+    }
+}
