@@ -1,5 +1,5 @@
 PODS:
-  - URBNSwiftyConvenience (0.4.1)
+  - URBNSwiftyConvenience (0.4.2)
 
 DEPENDENCIES:
   - URBNSwiftyConvenience (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  URBNSwiftyConvenience: 37576ec8ddd157cf5b747df482de1170c623dc58
+  URBNSwiftyConvenience: 717e90f54a313fbb998ea705707e9801edc47f37
 
 PODFILE CHECKSUM: b1a00df3b001c7558afb1929e95f3522d9d92a6b
 

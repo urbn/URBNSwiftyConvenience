@@ -1,6 +1,6 @@
 {
   "name": "URBNSwiftyConvenience",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "summary": "Convenience methods for commonly used iOS frameworks",
   "homepage": "https://github.com/urbn/URBNSwiftyConvenience",
   "license": "MIT",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/urbn/URBNSwiftyConvenience.git",
-    "tag": "0.4.1"
+    "tag": "0.4.2"
   },
   "platforms": {
     "ios": "10.0",

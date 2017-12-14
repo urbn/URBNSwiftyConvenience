@@ -135,3 +135,55 @@ public extension UIStackView {
         }
     }
 }
+
+// TODO: Refactor out when we move to swifty 4
+//       Also we could adopt add & subtract capability similar to - https://useyourloaf.com/blog/easier-swift-layout-priorities/
+@available(swift, obsoleted: 4.0)
+public struct ConstraintPriority: RawRepresentable {
+    
+    public static let defaultLow: ConstraintPriority = ConstraintPriority(UILayoutPriorityDefaultLow)
+    public static let defaultHigh: ConstraintPriority = ConstraintPriority(UILayoutPriorityDefaultHigh)
+    public static let required: ConstraintPriority = ConstraintPriority(UILayoutPriorityRequired)
+    public static let fittingSizeLevel: ConstraintPriority = ConstraintPriority(UILayoutPriorityFittingSizeLevel)
+
+    public var rawValue: Float
+
+    public init(_ rawValue: Float) {
+        self.rawValue = rawValue
+    }
+    
+    public init(rawValue: Float) {
+        self.rawValue = rawValue
+    }
+}
+
+extension ConstraintPriority: Equatable, Hashable {
+    public var hashValue: Int {
+        return rawValue.hashValue
+    }
+    
+    public static func == (lhs: ConstraintPriority, rhs: ConstraintPriority) -> Bool {
+        return lhs.rawValue == rhs.rawValue
+    }
+}
+
+public extension ConstraintPriority {
+    static func +(lhs: ConstraintPriority, rhs: Float) -> ConstraintPriority {
+        return ConstraintPriority(lhs.rawValue + rhs)
+    }
+    
+    static func -(lhs: ConstraintPriority, rhs: Float) -> ConstraintPriority {
+        return ConstraintPriority(lhs.rawValue - rhs)
+    }
+}
+
+
+public extension NSLayoutConstraint {
+    
+    // TODO: Refactor out when we move to swifty 4
+    @available(swift, obsoleted: 4.0)
+    public func activate(withPriority constraintPriority: ConstraintPriority) {
+        self.priority = constraintPriority.rawValue
+        isActive = true
+    }
+}
