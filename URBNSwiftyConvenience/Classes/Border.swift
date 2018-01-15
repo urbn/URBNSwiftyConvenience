@@ -98,14 +98,14 @@ final class Border: UIView {
         if side == .leading || side == .trailing {
             widthConstraint = widthAnchor.constraint(equalToConstant: borderStyle.pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale))
             widthConstraint?.isActive = true
-            setContentHuggingPriority(UILayoutPriorityFittingSizeLevel, for: .vertical)
-            setContentCompressionResistancePriority(UILayoutPriorityFittingSizeLevel, for: .vertical)
+            setContentHuggingPriority(.fittingSizeLevel, for: .vertical)
+            setContentCompressionResistancePriority(.fittingSizeLevel, for: .vertical)
         }
         else if side == .top || side == .bottom {
             widthConstraint = heightAnchor.constraint(equalToConstant: borderStyle.pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale))
             widthConstraint?.isActive = true
-            setContentHuggingPriority(UILayoutPriorityFittingSizeLevel, for: .horizontal)
-            setContentCompressionResistancePriority(UILayoutPriorityFittingSizeLevel, for: .horizontal)
+            setContentHuggingPriority(.fittingSizeLevel, for: .horizontal)
+            setContentCompressionResistancePriority(.fittingSizeLevel, for: .horizontal)
         }
         
         widthConstraint?.constant = borderStyle.pixelWidth.pixelsToPoints(forContentScaleFactor: currentScale)

@@ -9,9 +9,6 @@
 import Foundation
 
 public typealias InsetConstraint = (constant: CGFloat, priority: UILayoutPriority)
-fileprivate var defaultInsetConstraint: InsetConstraint {
-    return (constant: 0.0, priority: UILayoutPriorityRequired)
-}
 
 public struct InsetConstraints {
     public var top: InsetConstraint
@@ -19,7 +16,7 @@ public struct InsetConstraints {
     public var right: InsetConstraint
     public var bottom: InsetConstraint
     
-    public init(top: InsetConstraint = defaultInsetConstraint, left: InsetConstraint = defaultInsetConstraint, bottom: InsetConstraint = defaultInsetConstraint, right: InsetConstraint = defaultInsetConstraint) {
+    public init(top: InsetConstraint = (constant: 0.0, priority: .required), left: InsetConstraint = (constant: 0.0, priority: .required), bottom: InsetConstraint = (constant: 0.0, priority: .required), right: InsetConstraint = (constant: 0.0, priority: .required)) {
         self.top = top
         self.left = left
         self.bottom = bottom
@@ -33,7 +30,7 @@ public struct InsetConstraints {
                   right: (constant: insets.right, priority: horizontalPriority))
     }
     
-    public init(insets: UIEdgeInsets, priority: UILayoutPriority = UILayoutPriorityRequired) {
+    public init(insets: UIEdgeInsets, priority: UILayoutPriority = .required) {
         self.init(insets: insets, horizontalPriority: priority, verticalPriority: priority)
     }
 }
@@ -138,13 +135,13 @@ public extension UIStackView {
 
 // TODO: Refactor out when we move to swifty 4
 //       Also we could adopt add & subtract capability similar to - https://useyourloaf.com/blog/easier-swift-layout-priorities/
-@available(swift, obsoleted: 4.0)
+@available(swift, deprecated: 4.0)
 public struct ConstraintPriority: RawRepresentable {
     
-    public static let defaultLow: ConstraintPriority = ConstraintPriority(UILayoutPriorityDefaultLow)
-    public static let defaultHigh: ConstraintPriority = ConstraintPriority(UILayoutPriorityDefaultHigh)
-    public static let required: ConstraintPriority = ConstraintPriority(UILayoutPriorityRequired)
-    public static let fittingSizeLevel: ConstraintPriority = ConstraintPriority(UILayoutPriorityFittingSizeLevel)
+    public static let defaultLow: ConstraintPriority = ConstraintPriority(UILayoutPriority.defaultLow.rawValue)
+    public static let defaultHigh: ConstraintPriority = ConstraintPriority(UILayoutPriority.defaultHigh.rawValue)
+    public static let required: ConstraintPriority = ConstraintPriority(UILayoutPriority.required.rawValue)
+    public static let fittingSizeLevel: ConstraintPriority = ConstraintPriority(UILayoutPriority.fittingSizeLevel.rawValue)
 
     public var rawValue: Float
 
@@ -181,9 +178,9 @@ public extension ConstraintPriority {
 public extension NSLayoutConstraint {
     
     // TODO: Refactor out when we move to swifty 4
-    @available(swift, obsoleted: 4.0)
+    @available(swift, deprecated: 4.0)
     public func activate(withPriority constraintPriority: ConstraintPriority) {
-        self.priority = constraintPriority.rawValue
+        self.priority = UILayoutPriority(constraintPriority.rawValue)
         isActive = true
     }
 }
