@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "URBNSwiftyConvenience"
-  s.version          = "1.0"
+  s.version          = "1.1"
   s.summary          = "Convenience methods for commonly used iOS frameworks"
   s.homepage         = "https://github.com/urbn/URBNSwiftyConvenience"
   s.license          = 'MIT'
