@@ -171,7 +171,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				8E40E83DD43A5C1E3D2B395F /* [CP] Embed Pods Frameworks */,
-				81B9CE3601C404FD9EB8DA5C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,7 +190,6 @@
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
 				3EDAD19B54E457B798A1BD8F /* [CP] Embed Pods Frameworks */,
-				94549E1F3025237B29D5B7E5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -304,21 +302,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-URBNSwiftyConvenience_Tests/Pods-URBNSwiftyConvenience_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		81B9CE3601C404FD9EB8DA5C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-URBNSwiftyConvenience_Example/Pods-URBNSwiftyConvenience_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8E40E83DD43A5C1E3D2B395F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -335,21 +318,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-URBNSwiftyConvenience_Example/Pods-URBNSwiftyConvenience_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		94549E1F3025237B29D5B7E5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-URBNSwiftyConvenience_Tests/Pods-URBNSwiftyConvenience_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AB9BFF31B3A31B7899A8296A /* [CP] Check Pods Manifest.lock */ = {
