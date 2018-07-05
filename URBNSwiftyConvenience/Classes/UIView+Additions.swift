@@ -33,7 +33,7 @@ extension UIView {
     ///   - allInsets: constant padding between all edges
     ///   - useSafeArea: if true, use the safe area guides
     public func embed(subview: UIView, allInsets: CGFloat = 0, safeAreaEdges: SafeAreaEdges = .none) {
-        embed(subview: subview, insets: [.top: allInsets, .left: allInsets, .bottom: allInsets, .right: allInsets], safeAreaEdges: safeAreaEdges)
+        embed(subview: subview, insets: UIEdgeInsets(top: allInsets, left: allInsets, bottom: allInsets, right: allInsets), safeAreaEdges: safeAreaEdges)
     }
 
     /// Uses autolayout to embed a subview inside a view with inset constraints
