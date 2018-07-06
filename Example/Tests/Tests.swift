@@ -21,5 +21,17 @@ class Tests: XCTestCase {
         XCTAssertEqual(UIColor(hexString: "#FFFF0"), UIColor(rgb: 0))
         XCTAssertEqual(UIColor(hexString: "Jerkface"), UIColor(rgb: 0))
     }
+    
+    func testConditionalAssignment() {
+        var myDictionary = [String: String]()
+        let missing: String? = nil
+        let exists: String? = "baz"
+        
+        myDictionary["foo"] ?= missing
+        myDictionary["bar"] ?= exists
+        
+        XCTAssertNil(myDictionary["foo"])
+        XCTAssertEqual(myDictionary["bar"], "baz")
+    }
 }
 
