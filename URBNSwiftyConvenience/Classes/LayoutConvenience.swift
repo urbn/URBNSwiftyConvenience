@@ -131,6 +131,13 @@ public extension UIStackView {
             addArrangedSubview(v)
         }
     }
+    
+    public func removeAllArrangedSubviews() {
+        arrangedSubviews.forEach {
+            self.removeArrangedSubview($0)
+            $0.removeFromSuperview()
+        }
+    }
 }
 
 // TODO: Refactor out when we move to swifty 4
