@@ -35,7 +35,7 @@ public struct InsetConstraints {
     }
 }
 
-public func activateVFL(format: String, options: NSLayoutFormatOptions = [], metrics: [String : Any]? = nil, views: [String : Any]) {
+public func activateVFL(format: String, options: NSLayoutConstraint.FormatOptions = [], metrics: [String : Any]? = nil, views: [String : Any]) {
     NSLayoutConstraint.activate(
         NSLayoutConstraint.constraints(
             withVisualFormat: format,
