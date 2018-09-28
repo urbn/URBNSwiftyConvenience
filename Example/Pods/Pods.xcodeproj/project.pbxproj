@@ -20,7 +20,7 @@
 		655A31F9BC017B52374D1A1F059B1141 /* DictionaryConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C33D6A70CA4D9B60308F780B422CE2 /* DictionaryConvenience.swift */; };
 		738BF2EA07DCEEC9BA52E357C48E838C /* SearchableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526E1E1F881983AE7D4AD2C129A936DB /* SearchableProtocol.swift */; };
 		74FC677A4D5CC9F719D624985DBCF791 /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26F22A19535C690931BAB2530804CC /* TableViewHelpers.swift */; };
-		919CB55F215C13D200253F0F /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919CB55E215C13D200253F0F /* UIViewController+Extensions.swift */; };
+		917491F4215EC9B00008474F /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919CB55E215C13D200253F0F /* UIViewController+Extensions.swift */; };
 		9219E3489E638B442D6312874CE0BB82 /* AssociatedKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2407D798C2D0447F640840DE2647568B /* AssociatedKey.swift */; };
 		995212608A766A12D17895A69F291E54 /* LayoutConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401FA905217EB750FC4E0D68C1BDE8D /* LayoutConvenience.swift */; };
 		9FB2755E535A3592560C71BC178DFDDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
@@ -413,6 +413,7 @@
 				D2ED1DE27ACF034EF298C4BFEF5D4F5C /* DateConvenience.swift in Sources */,
 				655A31F9BC017B52374D1A1F059B1141 /* DictionaryConvenience.swift in Sources */,
 				2A9829A7BA0F7C9F1B2F68ED5536C55E /* Geometry+Additions.swift in Sources */,
+				917491F4215EC9B00008474F /* UIViewController+Extensions.swift in Sources */,
 				995212608A766A12D17895A69F291E54 /* LayoutConvenience.swift in Sources */,
 				19FC0CA7BFAEAEB6BD8C8E4ED4168790 /* NotificationConvenience.swift in Sources */,
 				06DE17F0F97F753B968D954BE4D53D11 /* Operators.swift in Sources */,
@@ -432,7 +433,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				919CB55F215C13D200253F0F /* UIViewController+Extensions.swift in Sources */,
 				0A43A818B511F7E791DBBAA79C35210A /* Pods-URBNSwiftyConvenience_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
