@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .gray
+
         let mondrian = UIView()
         mondrian.backgroundColor = UIColor(white: 0.9, alpha: 1)
         mondrian.translatesAutoresizingMaskIntoConstraints = false
