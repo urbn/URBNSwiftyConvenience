@@ -26,7 +26,7 @@ final class ChildViewController: UIViewController {
     }
 
     @objc private func removeChildAction() {
-        removeChildViewController()
+        removeViewAndViewControllerFromParent()
     }
 
     required init?(coder aDecoder: NSCoder) {
