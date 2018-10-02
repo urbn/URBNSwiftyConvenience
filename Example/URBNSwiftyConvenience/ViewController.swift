@@ -12,7 +12,6 @@ import URBNSwiftyConvenience
 class ViewController: UIViewController {
     
     var animateBorder: UIView?
-    private let childViewController = ChildViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,7 +113,7 @@ class ViewController: UIViewController {
     }
 
     @objc private func addChildAction() {
-        embedChildViewController(childViewController)
+        embedChildViewController(ChildViewController())
     }
 
     override func viewDidAppear(_ animated: Bool) {
