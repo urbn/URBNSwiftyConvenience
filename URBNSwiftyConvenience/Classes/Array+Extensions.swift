@@ -14,10 +14,10 @@ extension RandomAccessCollection {
     ///
     /// - Parameter areInIncreasingOrder: return nil when two element are equal
     /// - Returns: the sorted collection
-    public func stableSorted(by areInIncreasingOrder: (Iterator.Element, Iterator.Element) -> Bool?) -> [Iterator.Element] {
+    public func stableSorted(by sortOrder: (Iterator.Element, Iterator.Element) -> Bool?) -> [Iterator.Element] {
         
         let sorted = self.enumerated().sorted { (one, another) -> Bool in
-            if let result = areInIncreasingOrder(one.element, another.element) {
+            if let result = sortOrder(one.element, another.element) {
                 return result
             } else {
                 return one.offset < another.offset
