@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .gray
+
         let mondrian = UIView()
         mondrian.backgroundColor = UIColor(white: 0.9, alpha: 1)
         mondrian.translatesAutoresizingMaskIntoConstraints = false
@@ -100,6 +102,18 @@ class ViewController: UIViewController {
         constraintPriorityTestView.leftAnchor.constraint(equalTo: view.leftAnchor).activate(withPriority: .defaultHigh + 1)
         constraintPriorityTestView.widthAnchor.constraint(equalToConstant: 42.0).activate(withPriority: .required)
         constraintPriorityTestView.heightAnchor.constraint(equalToConstant: 42.0).activate(withPriority: .defaultHigh - 1)
+
+        let addChildButton = UIButton()
+        addChildButton.setTitle("Add Child VC", for: .normal)
+        addChildButton.addTarget(self, action: #selector(addChildAction), for: .touchUpInside)
+
+        view.addSubviewsWithNoConstraints(addChildButton)
+        addChildButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        addChildButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+
+    @objc private func addChildAction() {
+        embedChildViewController(ChildViewController())
     }
 
     override func viewDidAppear(_ animated: Bool) {
