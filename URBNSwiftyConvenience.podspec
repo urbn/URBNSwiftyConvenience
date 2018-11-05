@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "URBNSwiftyConvenience"
-  s.version          = "1.4.0"
+  s.version          = "1.5.0"
   s.summary          = "Convenience methods for commonly used iOS frameworks"
   s.homepage         = "https://github.com/urbn/URBNSwiftyConvenience"
   s.license          = 'MIT'
@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = '10.0'
 
   s.requires_arc = true
+  s.swift_version = '4.2'
 
   s.source_files = 'URBNSwiftyConvenience/Classes/**/*'
 end

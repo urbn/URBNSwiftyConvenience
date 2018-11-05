@@ -41,7 +41,7 @@ public extension CIImage {
         let foregroundCoreColor = CIColor(uiColor: foregroundColor)
         let backgroundCoreColor = CIColor(uiColor: backgroundColor)
         
-        let colorFilter = CIFilter(name: "CIFalseColor", withInputParameters: ["inputImage": self, "inputColor0":foregroundCoreColor, "inputColor1":backgroundCoreColor])
+        let colorFilter = CIFilter(name: "CIFalseColor", parameters: ["inputImage": self, "inputColor0":foregroundCoreColor, "inputColor1":backgroundCoreColor])
         
         return colorFilter?.outputImage
     }

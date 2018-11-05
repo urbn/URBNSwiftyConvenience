@@ -6,7 +6,7 @@
 //
 //
 
-import Foundation
+import UIKit
 
 extension CharacterSet {
     public static var hexValues: CharacterSet {

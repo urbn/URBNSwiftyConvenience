@@ -9,14 +9,14 @@ import Foundation
 
 public extension UIViewController {
     public func embedChildViewController(_ childViewController: UIViewController, insets: UIEdgeInsets = .zero,  safeAreaEdges: SafeAreaEdges = .none) {
-        addChildViewController(childViewController)
+        addChild(childViewController)
         view.embed(subview: childViewController.view, insets: insets, safeAreaEdges: safeAreaEdges)
-        childViewController.didMove(toParentViewController: self)
+        childViewController.didMove(toParent: self)
     }
 
     public func removeViewAndViewControllerFromParent() {
-        willMove(toParentViewController: nil)
+        willMove(toParent: nil)
         view.removeFromSuperview()
-        removeFromParentViewController()
+        removeFromParent()
     }
 }
