@@ -751,7 +751,7 @@
 		};
 		F7293A2ABFB884C0A8F3F4BA7605B25C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E3C6BA5C132128B47D2085E47462B2D /* URBNSwiftyConvenience.xcconfig */;
+			baseConfigurationReference = 0841DF6BBD21026AD9084B9CD4936D3E /* URBNSwiftyConvenience.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
