@@ -8,49 +8,47 @@
 
 import Foundation
 
-public protocol ResultType {
-    associatedtype Value
-    
-    init(_ value: Value?)
-    init(_ error: Error)
-    
-    var value: Value? { get }
-    var error: Error? { get }
+//public protocol ResultType {
+//    associatedtype Value
+//    associatedtype Failure
+//
+//    init(_ value: Value?)
+//    init(_ error: Failure)
+//
+//    var value: Value? { get }
+//    var error: Failure? { get }
+//}
+
+public enum Result<Success, Failure: Error> {
+    case success(Success)
+    case failure(Failure)
 }
 
-public enum Result<T>: ResultType {
-    public typealias Value = T
-    
-    case success(Value?)
-    case failure(Error)
-    
-    public var value: Value? {
+extension Result {
+    public var value: Success? {
         switch self {
         case .success(let v): return v
         default: return nil
         }
     }
     
-    public var error: Error? {
+    public var error: Failure? {
         switch self {
         case .failure(let e): return e
         default: return nil
         }
     }
     
-    public init(_ error: Error) {
+    public init(_ error: Failure) {
         self = .failure(error)
     }
     
-    public init(_ value: Value?) {
-        if let v = value as? Error {
+    public init(_ value: Success) {
+        if let v = value as? Failure {
             self = .failure(v)
         }
-        else if let v = value {
-            self = .success(v)
-        }
         else {
-            self = .success(nil)
+            self = .success(value)
         }
     }
 }
@@ -64,7 +62,7 @@ public extension Result {
 
 // MARK: - Helper Handling -
 public extension Result {
-    public func onSuccess(handler: (_ data: Value?) -> Void) {
+    public func onSuccess(handler: (_ data: Success) -> Void) {
         switch(self) {
         case .success(let data): handler(data)
         default: break
@@ -79,7 +77,7 @@ public extension Result {
     }
 }
 
-public extension Result where T:Equatable {
+public extension Result where Success:Equatable {
     public static func ==(lhs: Result, rhs: Result) -> Bool {
         switch (lhs, rhs) {
         case (.success(let lhsVal), .success(let rhsVal)):
@@ -95,64 +93,55 @@ public extension Result where T:Equatable {
     }
 }
 
-// MARK: - Equatability -
-extension Result: Equatable {}
 @objc public class NoResponseType: NSObject {}
 
-public func ==<T,U>(lhs: Result<T>, rhs: Result<U>) -> Bool {
-    // Results with different types are not equal
-    switch (lhs, rhs) {
-    case (.failure(let lhsErr), .failure(let rhsErr)):
-        // Two errors are equal if their _domain's and _code's are equal
-        return lhsErr._domain == rhsErr._domain && lhsErr._code == rhsErr._code
-        
-    default: return false
-    }
-}
+// MARK: - Apple Compatibility -
+extension Result: Equatable where Success: Equatable, Failure: Equatable { }
+extension Result: Hashable where Success: Hashable, Failure: Hashable { }
 
-public func ==<T>(lhs: Result<T>, rhs: Result<T>) -> Bool {
-    switch (lhs, rhs) {
-    case (.success, .success) where T.self == NoResponseType.self:
-        return true
-    case (.failure(let lhsErr), .failure(let rhsErr)):
-        // Two errors are equal if their _domain's and _code's are equal
-        return lhsErr._domain == rhsErr._domain && lhsErr._code == rhsErr._code
-        
-    default: return false
-    }
-}
-
-// MARK: - Map
 extension Result {
-    
-    /// Allow us to transform values in the result type
-    ///
-    /// - Parameter transform: function to transform one value to another
-    /// - Returns: a result with the new value type
-    public func map<U>(_ transform: (Value?) throws -> U?) -> Result<U> {
+    public func map<NewSuccess>(_ transform: (Success) -> NewSuccess) -> Result<NewSuccess, Failure> {
         switch self {
-        case .failure(let error):
-            return Result<U>(error)
-        case .success(let value):
-            do {
-                return Result<U>(try transform(value))
-            }
-            catch let error {
-                return Result<U>(error)
-            }
+        case let .success(success):
+            return .success(transform(success))
+        case let .failure(failure):
+            return .failure(failure)
         }
     }
 
-    /// Allow us to transform errors in the result type
-    ///
-    /// - Parameter transform: function to transform one error to another
-    /// - Returns: a result with the new error type
-    public func map(_ transform: (Error) -> Error) -> Result<Value> {
+    public func mapError<NewFailure>(_ transform: (Failure) -> NewFailure) -> Result<Success, NewFailure> {
         switch self {
-        case .failure(let error):
-            return Result(transform(error))
-        case .success(let value):
-            return Result(value)
+        case let .success(success):
+            return .success(success)
+        case let .failure(failure):
+            return .failure(transform(failure))
+        }
+    }
+    
+    public func flatMap<NewSuccess>(_ transform: (Success) -> Result<NewSuccess, Failure>) -> Result<NewSuccess, Failure> {
+        switch self {
+        case let .success(success):
+            return transform(success)
+        case let .failure(failure):
+            return .failure(failure)
+        }
+    }
+    
+    public func flatMapError<NewFailure>(_ transform: (Failure) -> Result<Success, NewFailure>) -> Result<Success, NewFailure> {
+        switch self {
+        case let .success(success):
+            return .success(success)
+        case let .failure(failure):
+            return transform(failure)
+        }
+    }
+    
+    public func get() throws -> Success {
+        switch self {
+        case let .success(success):
+            return success
+        case let .failure(failure):
+            throw failure
         }
     }
 }
