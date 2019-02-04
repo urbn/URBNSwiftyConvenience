@@ -8,17 +8,6 @@
 
 import Foundation
 
-//public protocol ResultType {
-//    associatedtype Value
-//    associatedtype Failure
-//
-//    init(_ value: Value?)
-//    init(_ error: Failure)
-//
-//    var value: Value? { get }
-//    var error: Failure? { get }
-//}
-
 public enum Result<Success, Failure: Error> {
     case success(Success)
     case failure(Failure)
