@@ -8,9 +8,9 @@
 
 import Foundation
 
-public enum Result<Success, Failure: Error> {
+public enum Result<Success> {
     case success(Success)
-    case failure(Failure)
+    case failure(Error)
 }
 
 extension Result {
@@ -21,19 +21,19 @@ extension Result {
         }
     }
     
-    public var error: Failure? {
+    public var error: Error? {
         switch self {
         case .failure(let e): return e
         default: return nil
         }
     }
     
-    public init(_ error: Failure) {
+    public init(_ error: Error) {
         self = .failure(error)
     }
     
     public init(_ value: Success) {
-        if let v = value as? Failure {
+        if let v = value as? Error {
             self = .failure(v)
         }
         else {
@@ -85,11 +85,8 @@ public extension Result where Success:Equatable {
 @objc public class NoResponseType: NSObject {}
 
 // MARK: - Apple Compatibility -
-extension Result: Equatable where Success: Equatable, Failure: Equatable { }
-extension Result: Hashable where Success: Hashable, Failure: Hashable { }
-
 extension Result {
-    public func map<NewSuccess>(_ transform: (Success) -> NewSuccess) -> Result<NewSuccess, Failure> {
+    public func map<NewSuccess>(_ transform: (Success) -> NewSuccess) -> Result<NewSuccess> {
         switch self {
         case let .success(success):
             return .success(transform(success))
@@ -98,30 +95,12 @@ extension Result {
         }
     }
 
-    public func mapError<NewFailure>(_ transform: (Failure) -> NewFailure) -> Result<Success, NewFailure> {
-        switch self {
-        case let .success(success):
-            return .success(success)
-        case let .failure(failure):
-            return .failure(transform(failure))
-        }
-    }
-    
-    public func flatMap<NewSuccess>(_ transform: (Success) -> Result<NewSuccess, Failure>) -> Result<NewSuccess, Failure> {
+    public func flatMap<NewSuccess>(_ transform: (Success) -> Result<NewSuccess>) -> Result<NewSuccess> {
         switch self {
         case let .success(success):
             return transform(success)
         case let .failure(failure):
             return .failure(failure)
-        }
-    }
-    
-    public func flatMapError<NewFailure>(_ transform: (Failure) -> Result<Success, NewFailure>) -> Result<Success, NewFailure> {
-        switch self {
-        case let .success(success):
-            return .success(success)
-        case let .failure(failure):
-            return transform(failure)
         }
     }
     
