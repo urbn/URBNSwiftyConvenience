@@ -40,6 +40,14 @@ extension Result {
             self = .success(value)
         }
     }
+    
+    public init(catching body: () throws -> Success) {
+        do {
+            self = .success(try body())
+        } catch {
+            self = .failure(error)
+        }
+    }
 }
 
 
