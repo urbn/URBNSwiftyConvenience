@@ -8,20 +8,32 @@
 
 import Foundation
 
-
 public extension String {
-    public func qrImage() -> CIImage? {
+    public func qrImage(inputCorrection: String = "Q") -> CIImage? {
         let data = self.data(using: String.Encoding.isoLatin1, allowLossyConversion: false)
         let filter = CIFilter(name: "CIQRCodeGenerator")
         
         filter?.setValue(data, forKey: "inputMessage")
-        filter?.setValue("Q", forKey: "inputCorrectionLevel")
+        filter?.setValue(inputCorrection, forKey: "inputCorrectionLevel")
         
         return filter?.outputImage
     }
-    
-    public func qrImage(foregroundColor: UIColor, backgroundColor: UIColor, size: CGSize) -> UIImage? {
-        return qrImage()?.scale(size)?.color(foregroundColor: foregroundColor, backgroundColor: backgroundColor)?.mapToUIImage()
+
+    /// 7.00 is default Min is 0 Max is 20
+    public func barcode128(inputQuietSpace: NSNumber = 7.00) -> CIImage? {
+        let data = self.data(using: String.Encoding.isoLatin1, allowLossyConversion: false)
+        let filter = CIFilter(name: "CICode128BarcodeGenerator")
+        
+        filter?.setValue(data, forKey: "inputMessage")
+        filter?.setValue(inputQuietSpace, forKey: "inputQuietSpace")
+        
+        return filter?.outputImage
+    }
+}
+
+public extension UIImage {
+    static func createFromCIImage(_ ciImage: CIImage?, foregroundColor: UIColor, backgroundColor: UIColor, size: CGSize) -> UIImage? {
+        return ciImage?.scale(size)?.color(foregroundColor: foregroundColor, backgroundColor: backgroundColor)?.mapToUIImage()
     }
 }
 
