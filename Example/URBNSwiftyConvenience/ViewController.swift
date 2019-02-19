@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .gray
 
-        let mondrian = UIView()
+        let mondrian = UIImageView()
         mondrian.backgroundColor = UIColor(white: 0.9, alpha: 1)
         mondrian.translatesAutoresizingMaskIntoConstraints = false
         
@@ -26,6 +26,23 @@ class ViewController: UIViewController {
         mondrian.urbn_bottomBorderStyle = BorderStyle(color: .purple, pixelWidth: 5, insets: UIEdgeInsets(top: 0, left: 0, bottom: 5, right: 12))
         mondrian.urbn_leadingBorderStyle = BorderStyle(color: .red, pixelWidth: 7, insets: UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10))
         mondrian.urbn_trailingBorderStyle = BorderStyle(color: .orange)
+        
+        if let qrImage = "asdf".qrImage()?.color(foregroundColor: .black, backgroundColor: .white) {
+            let workingRect = qrImage.extent.insetBy(dx: 1, dy: 1)
+            
+            let cgImage = CIContext(options: nil).createCGImage(qrImage, from: workingRect)
+            let size = CGSize(width: 100, height: 100)
+            
+            UIGraphicsBeginImageContextWithOptions(size, false, 0)
+            if let context = UIGraphicsGetCurrentContext(), let cgImage = cgImage {
+                context.interpolationQuality = .none
+                context.translateBy(x: 0, y: size.height)
+                context.scaleBy(x: 1.0, y: -1.0)
+                context.draw(cgImage, in: context.boundingBoxOfClipPath)
+                mondrian.image = UIGraphicsGetImageFromCurrentImageContext()
+            }
+            UIGraphicsEndImageContext()
+        }
         
         view.addSubview(mondrian)
         mondrian.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -35,9 +52,27 @@ class ViewController: UIViewController {
         
         
         
-        let simpleBlue = UIView()
+        let simpleBlue = UIImageView()
         simpleBlue.backgroundColor = UIColor(white: 0.9, alpha: 1)
         simpleBlue.translatesAutoresizingMaskIntoConstraints = false
+        
+        if let barcodeImage = "amanaplanacanalpanama".barcode128()?.color(foregroundColor: .black, backgroundColor: .white) {
+            let workingRect = barcodeImage.extent.insetBy(dx: 1, dy: 1)
+            
+            let cgImage = CIContext(options: nil).createCGImage(barcodeImage, from: workingRect)
+            let size = CGSize(width: 100, height: 100)
+            
+            UIGraphicsBeginImageContextWithOptions(size, false, 0)
+            if let context = UIGraphicsGetCurrentContext(), let cgImage = cgImage {
+                context.interpolationQuality = .none
+                context.translateBy(x: 0, y: size.height)
+                context.scaleBy(x: 1.0, y: -1.0)
+                context.draw(cgImage, in: context.boundingBoxOfClipPath)
+                simpleBlue.image = UIGraphicsGetImageFromCurrentImageContext()
+            }
+            UIGraphicsEndImageContext()
+        }
+
         
         simpleBlue.setBorderStyle(BorderStyle(color: .blue))
         
