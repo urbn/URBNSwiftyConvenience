@@ -9,7 +9,7 @@
 import Foundation
 
 public extension String {
-    public func qrImage(inputCorrection: String = "Q") -> CIImage? {
+    func qrImage(inputCorrection: String = "Q") -> CIImage? {
         let data = self.data(using: String.Encoding.isoLatin1, allowLossyConversion: false)
         let filter = CIFilter(name: "CIQRCodeGenerator")
         
@@ -20,7 +20,7 @@ public extension String {
     }
 
     /// 7.00 is default Min is 0 Max is 20
-    public func barcode128(inputQuietSpace: NSNumber = 7.00) -> CIImage? {
+    func barcode128(inputQuietSpace: NSNumber = 7.00) -> CIImage? {
         let data = self.data(using: String.Encoding.isoLatin1, allowLossyConversion: false)
         let filter = CIFilter(name: "CICode128BarcodeGenerator")
         
@@ -38,18 +38,18 @@ public extension UIImage {
 }
 
 public extension CIImage {
-    public func mapToUIImage() -> UIImage? {
+    func mapToUIImage() -> UIImage? {
         return UIImage(ciImage: self)
     }
     
-    public func scale(_ size: CGSize) -> CIImage? {
+    func scale(_ size: CGSize) -> CIImage? {
         let scaleX = size.width / extent.size.width
         let scaleY = size.height / extent.size.height
         
         return transformed(by: CGAffineTransform(scaleX: scaleX, y: scaleY))
     }
     
-    public func color(foregroundColor: UIColor, backgroundColor: UIColor) -> CIImage? {
+    func color(foregroundColor: UIColor, backgroundColor: UIColor) -> CIImage? {
         let foregroundCoreColor = CIColor(uiColor: foregroundColor)
         let backgroundCoreColor = CIColor(uiColor: backgroundColor)
         

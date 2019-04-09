@@ -47,25 +47,22 @@ public func activateVFL(format: String, options: NSLayoutConstraint.FormatOption
 }
 
 public extension UIView {
-    @available(*, unavailable, message: "use addSubviewsWithNoConstraints instead")
-    public func addSubviewWithNoConstraints(_ subview: UIView) { }
-    
-    public func addSubviewsWithNoConstraints(_ subviews: UIView...) {
+    func addSubviewsWithNoConstraints(_ subviews: UIView...) {
         addSubviewsWithNoConstraints(subviews)
     }
     
-    public func addSubviewsWithNoConstraints(_ subviews: [UIView]) {
+    func addSubviewsWithNoConstraints(_ subviews: [UIView]) {
         for v in subviews {
             v.translatesAutoresizingMaskIntoConstraints = false
             addSubview(v)
         }
     }
     
-    public func addSubviewsWithNoConstraints<T: UIView>(_ subviews: LazyMapCollection<[String: T], T>) {
+    func addSubviewsWithNoConstraints<T: UIView>(_ subviews: LazyMapCollection<[String: T], T>) {
         addSubviewsWithNoConstraints(Array(subviews))
     }
     
-    public func wrapInView(_ view: UIView? = nil, withInsets insets: UIEdgeInsets = UIEdgeInsets.zero) -> UIView {
+    func wrapInView(_ view: UIView? = nil, withInsets insets: UIEdgeInsets = UIEdgeInsets.zero) -> UIView {
         var container: UIView
         if let view = view {
             container = view
@@ -84,20 +81,17 @@ public extension UIView {
         return container
     }
     
-    @available(iOS 9, *)
-    public func wrap(in view: UIView, with insetConstraints: InsetConstraints) {
+    func wrap(in view: UIView, with insetConstraints: InsetConstraints) {
         wrap(child: self, inParent: view, with: insetConstraints)
     }
     
-    @available(iOS 9, *)
-    public func wrapInNewView(with insetConstraints: InsetConstraints) -> UIView {
+    func wrapInNewView(with insetConstraints: InsetConstraints) -> UIView {
         let view = UIView()
         wrap(child: self, inParent: view, with: insetConstraints)
         
         return view
     }
     
-    @available(iOS 9, *)
     private func wrap(child: UIView, inParent parent: UIView, with insetConstraints: InsetConstraints) {
         parent.addSubviewsWithNoConstraints(child)
         
@@ -119,45 +113,22 @@ public extension UIView {
     }
 }
 
-@available(iOS 9.0, *)
 public extension UIStackView {
-    
-    public func addArrangedSubviews(_ subviews: UIView...) {
+    func addArrangedSubviews(_ subviews: UIView...) {
         addArrangedSubviews(subviews)
     }
     
-    public func addArrangedSubviews(_ subviews: [UIView]) {
+    func addArrangedSubviews(_ subviews: [UIView]) {
         for v in subviews {
             addArrangedSubview(v)
         }
     }
     
-    public func removeAllArrangedSubviews() {
+    func removeAllArrangedSubviews() {
         arrangedSubviews.forEach {
             self.removeArrangedSubview($0)
             $0.removeFromSuperview()
         }
-    }
-}
-
-// TODO: Refactor out when we move to swifty 4
-//       Also we could adopt add & subtract capability similar to - https://useyourloaf.com/blog/easier-swift-layout-priorities/
-@available(swift, deprecated: 4.0)
-public struct ConstraintPriority: RawRepresentable {
-    
-    public static let defaultLow: ConstraintPriority = ConstraintPriority(UILayoutPriority.defaultLow.rawValue)
-    public static let defaultHigh: ConstraintPriority = ConstraintPriority(UILayoutPriority.defaultHigh.rawValue)
-    public static let required: ConstraintPriority = ConstraintPriority(UILayoutPriority.required.rawValue)
-    public static let fittingSizeLevel: ConstraintPriority = ConstraintPriority(UILayoutPriority.fittingSizeLevel.rawValue)
-
-    public var rawValue: Float
-
-    public init(_ rawValue: Float) {
-        self.rawValue = rawValue
-    }
-    
-    public init(rawValue: Float) {
-        self.rawValue = rawValue
     }
 }
 
@@ -173,9 +144,7 @@ public extension UILayoutPriority {
 }
 
 public extension NSLayoutConstraint {
-    
-    @available(swift 4.0)
-    public func activate(withPriority priority: UILayoutPriority) {
+    func activate(withPriority priority: UILayoutPriority) {
         self.priority = priority
         isActive = true
     }
