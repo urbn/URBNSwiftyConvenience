@@ -10,9 +10,9 @@ import UIKit
 
 public extension UIImage {
 
-    public typealias URBNConvenienceImageDrawBlock = (_ rect: CGRect, _ context: CGContext) -> ()
+    typealias URBNConvenienceImageDrawBlock = (_ rect: CGRect, _ context: CGContext) -> ()
     
-    public func tintedImage(color: UIColor) -> UIImage? {
+    func tintedImage(color: UIColor) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(self.size, false, 0.0)
         let context = UIGraphicsGetCurrentContext()
 
@@ -35,7 +35,7 @@ public extension UIImage {
         return newImage
     }
 
-    public static func imageDrawnWithKey(key: NSString, size: CGSize, drawBlock: URBNConvenienceImageDrawBlock) -> UIImage? {
+    static func imageDrawnWithKey(key: NSString, size: CGSize, drawBlock: URBNConvenienceImageDrawBlock) -> UIImage? {
         assert(size.width > 0 && size.height > 0, "Invalid image size (both dimensions must be greater than zero")
 
         let imageCache = NSCache<NSString, UIImage>()
@@ -55,7 +55,7 @@ public extension UIImage {
         return image
     }
 
-    public static func screenShot(view: UIView, afterScreenUpdates: Bool) -> UIImage? {
+    static func screenShot(view: UIView, afterScreenUpdates: Bool) -> UIImage? {
         UIGraphicsBeginImageContext(CGSize(width: view.frame.size.width, height: view.frame.size.height))
         view.drawHierarchy(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), afterScreenUpdates: afterScreenUpdates)
 
@@ -65,7 +65,7 @@ public extension UIImage {
         return image
     }
 
-    public static func scaleAndCropped(image: UIImage, radius: CGFloat) -> UIImage? {
+    static func scaleAndCropped(image: UIImage, radius: CGFloat) -> UIImage? {
         let scaledImage = image.scaleImage(size: CGSize(width: radius, height: radius))?.squareCroppedImageFromCenter(width: radius)
 
         UIGraphicsBeginImageContextWithOptions(CGSize(width: radius, height: radius), false, 0.0)
@@ -90,7 +90,7 @@ public extension UIImage {
     }
 
     #if !os(tvOS) 
-    public static func roundedStretchableImage(color: UIColor, cornerRadius: CGFloat) -> UIImage {
+    static func roundedStretchableImage(color: UIColor, cornerRadius: CGFloat) -> UIImage {
         let rectSize = max(cornerRadius, 4.0) * 2.0
         let rect = CGRect(x: 0, y: 0, width: rectSize, height: rectSize)
 
@@ -109,12 +109,12 @@ public extension UIImage {
         return image.stretchableImage(withLeftCapWidth: Int(rectWidth), topCapHeight: Int(rectHeight))
     }
 
-    public static func stretchableImage(color: UIColor) -> UIImage {
+    static func stretchableImage(color: UIColor) -> UIImage {
         return roundedStretchableImage(color: color, cornerRadius: 0.0)
     }
     #endif
 
-    public func scaleImage(size: CGSize) -> UIImage? {
+    func scaleImage(size: CGSize) -> UIImage? {
         let hRatio = size.width / self.size.width
         let vRatio = size.height / self.size.height
         let ratio = max(hRatio, vRatio)
@@ -123,7 +123,6 @@ public extension UIImage {
         switch imageOrientation {
         case .left, .leftMirrored, .right, .rightMirrored:
             newRect = CGRect(x: 0.0, y: 0.0, width: self.size.width * ratio, height: self.size.height * ratio)
-            break
         default:
             break
         }
@@ -140,7 +139,7 @@ public extension UIImage {
         return newImage
     }
 
-    public func squareCroppedImageFromCenter(width: CGFloat) -> UIImage? {
+    func squareCroppedImageFromCenter(width: CGFloat) -> UIImage? {
         let cropRect = CGRect(x: self.size.width - width / 2, y: self.size.height - width, width: width, height: width)
 
         guard let cgImage = self.cgImage, let imageReference = cgImage.cropping(to: cropRect) else { return nil }
@@ -149,23 +148,22 @@ public extension UIImage {
         return croppedImage
     }
 
-    public func transformForOrientation(newSize: CGSize) -> CGAffineTransform? {
+    func transformForOrientation(newSize: CGSize) -> CGAffineTransform? {
         var transform = CGAffineTransform.identity
 
         switch imageOrientation {
         case .down, .downMirrored:
             transform = transform.translatedBy(x: size.width, y: size.height)
             transform = transform.rotated(by: CGFloat(Double.pi))
-            break
         case .left, .leftMirrored:
             transform = transform.translatedBy(x: size.width, y: size.height)
             transform = transform.rotated(by: CGFloat(Double.pi / 2))
-            break
         case .right, .rightMirrored:
             transform = transform.translatedBy(x: size.width, y: size.height)
             transform = transform.rotated(by: CGFloat(-(Double.pi / 2)))
-            break
         case .up, .upMirrored:
+            break
+        @unknown default:
             break
         }
 
@@ -173,19 +171,19 @@ public extension UIImage {
         case .upMirrored, .downMirrored:
             transform.translatedBy(x: size.width, y: 0)
             transform.scaledBy(x: -1, y: 1)
-            break
         case .leftMirrored, .rightMirrored:
             transform.translatedBy(x: size.height, y: 0)
             transform.scaledBy(x: -1, y: 1)
-            break
         case .up, .down, .left, .right:
+            break
+        @unknown default:
             break
         }
 
         return transform
     }
 
-    public func orientImage(orientation: UIImage.Orientation) -> UIImage? {
+    func orientImage(orientation: UIImage.Orientation) -> UIImage? {
         if imageOrientation == orientation {
             return self
         }
@@ -203,12 +201,11 @@ public extension UIImage {
             switch orientation {
             case .left, .leftMirrored:
                 degreesRotate = multiplier * -rightAngel
-                break
             case .right, .rightMirrored:
                 degreesRotate = multiplier * rightAngel
-                break
             case .down, .downMirrored, .up, .upMirrored:
                 degreesRotate = rightAngel * 2
+            @unknown default:
                 break
             }
         }
@@ -218,12 +215,11 @@ public extension UIImage {
             switch orientation {
             case .up, .upMirrored:
                 degreesRotate = multiplier * -rightAngel
-                break
             case .down, .downMirrored:
                 degreesRotate = multiplier * rightAngel
-                break
             case .left, .leftMirrored, .right, .rightMirrored:
                 degreesRotate = rightAngel * 2
+            @unknown default:
                 break
             }
         }
@@ -233,7 +229,7 @@ public extension UIImage {
         return image
     }
 
-    public func rotateImage(degrees: CGFloat) -> UIImage? {
+    func rotateImage(degrees: CGFloat) -> UIImage? {
         let radians = Double(degrees / 180.0) * Double.pi
         let rotatedViewBox = UIView(frame: CGRect(x: 0.0, y: 0.0, width: self.size.width, height: self.size.height))
         let transform = CGAffineTransform(rotationAngle: CGFloat(radians))

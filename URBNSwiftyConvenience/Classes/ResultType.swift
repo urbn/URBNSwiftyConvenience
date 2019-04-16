@@ -57,21 +57,21 @@ public enum Result<T>: ResultType {
 
 
 public extension Result {
-    public var isEmpty: Bool {
+    var isEmpty: Bool {
         return value == nil
     }
 }
 
 // MARK: - Helper Handling -
 public extension Result {
-    public func onSuccess(handler: (_ data: Value?) -> Void) {
+    func onSuccess(handler: (_ data: Value?) -> Void) {
         switch(self) {
         case .success(let data): handler(data)
         default: break
         }
     }
     
-    public func onError(handler: (_ err: Error) -> Void) {
+    func onError(handler: (_ err: Error) -> Void) {
         switch(self) {
         case .failure(let e): handler(e)
         default: break
@@ -80,7 +80,7 @@ public extension Result {
 }
 
 public extension Result where T:Equatable {
-    public static func ==(lhs: Result, rhs: Result) -> Bool {
+    static func ==(lhs: Result, rhs: Result) -> Bool {
         switch (lhs, rhs) {
         case (.success(let lhsVal), .success(let rhsVal)):
             // Two successes are equal if their internal vals are equal

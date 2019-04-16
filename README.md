@@ -1,6 +1,6 @@
 # URBNSwiftyConvenience
 
-[![CI Status](http://img.shields.io/travis/Lloyd/URBNSwiftyConvenience.svg?style=flat)](https://travis-ci.org/urbn/URBNSwiftyConvenience)
+[![CI Status](http://img.shields.io/travis/urbn/URBNSwiftyConvenience.svg?style=flat)](https://travis-ci.org/urbn/URBNSwiftyConvenience)
 [![Version](https://img.shields.io/cocoapods/v/URBNSwiftyConvenience.svg?style=flat)](http://cocoapods.org/pods/URBNSwiftyConvenience)
 [![License](https://img.shields.io/cocoapods/l/URBNSwiftyConvenience.svg?style=flat)](http://cocoapods.org/pods/URBNSwiftyConvenience)
 [![Platform](https://img.shields.io/cocoapods/p/URBNSwiftyConvenience.svg?style=flat)](http://cocoapods.org/pods/URBNSwiftyConvenience)
