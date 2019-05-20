@@ -1,4 +1,4 @@
-framework module Pods_URBNSwiftyConvenience_Tests {
+module Pods_URBNSwiftyConvenience_Tests {
   umbrella header "Pods-URBNSwiftyConvenience_Tests-umbrella.h"
 
   export *
