@@ -1,4 +1,4 @@
-module URBNSwiftyConvenience {
+framework module URBNSwiftyConvenience {
   umbrella header "URBNSwiftyConvenience-umbrella.h"
 
   export *
