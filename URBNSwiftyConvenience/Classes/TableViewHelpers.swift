@@ -6,7 +6,7 @@
 //
 //
 
-import Foundation
+import UIKit
 
 //based on https://medium.com/@calebd/swift-reusable-cells-31391d2f2906#.owjb1kpk2
 extension UITableView {

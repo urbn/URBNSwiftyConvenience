@@ -6,7 +6,7 @@
 //
 //
 
-import Foundation
+import UIKit
 
 extension UICollectionView {
     public final func registerReusableCell<T>(_ cell: ReusableCell<T>) where T: UICollectionViewCell {

@@ -6,7 +6,8 @@
 //
 //
 
-import Foundation
+import CoreImage
+import UIKit
 
 public extension String {
     func qrImage(inputCorrection: String = "Q") -> CIImage? {
