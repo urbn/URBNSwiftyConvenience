@@ -17,5 +17,5 @@
   },
   "requires_arc": true,
   "swift_version": "5.0",
-  "source_files": "URBNSwiftyConvenience/Classes/**/*"
+  "source_files": "Sources/URBNSwiftyConvenience/*.{swift}"
 }

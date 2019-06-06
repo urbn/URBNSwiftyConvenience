@@ -292,15 +292,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-URBNSwiftyConvenience_Example/Pods-URBNSwiftyConvenience_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/URBNSwiftyConvenience/URBNSwiftyConvenience.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URBNSwiftyConvenience.framework",
 			);
@@ -314,15 +310,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-URBNSwiftyConvenience_Tests/Pods-URBNSwiftyConvenience_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/URBNSwiftyConvenience/URBNSwiftyConvenience.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URBNSwiftyConvenience.framework",
 			);
