@@ -5,7 +5,7 @@
 //  Created by Bao Tran on 9/26/18.
 //
 
-import Foundation
+import UIKit
 
 public extension UIViewController {
     func embedChildViewController(_ childViewController: UIViewController, insets: UIEdgeInsets = .zero,  safeAreaEdges: SafeAreaEdges = .none) {

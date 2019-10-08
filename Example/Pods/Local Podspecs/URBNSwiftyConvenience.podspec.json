@@ -16,6 +16,6 @@
     "tvos": "10.0"
   },
   "requires_arc": true,
-  "swift_version": "4.2",
-  "source_files": "URBNSwiftyConvenience/Classes/**/*"
+  "swift_version": "5.0",
+  "source_files": "Sources/URBNSwiftyConvenience/*.{swift}"
 }

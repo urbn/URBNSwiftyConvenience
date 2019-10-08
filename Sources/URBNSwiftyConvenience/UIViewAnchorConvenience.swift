@@ -5,7 +5,7 @@
 //  Created by Ray Migneco on 11/6/17.
 //
 
-import Foundation
+import UIKit
 
 /// Support safe area layout guides on supported platforms
 ///

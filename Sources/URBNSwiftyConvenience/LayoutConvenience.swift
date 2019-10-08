@@ -6,7 +6,7 @@
 //
 //
 
-import Foundation
+import UIKit
 
 public typealias InsetConstraint = (constant: CGFloat, priority: UILayoutPriority)
 
