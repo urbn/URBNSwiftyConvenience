@@ -158,4 +158,35 @@ extension UIView {
         // Alert the layout needs updating
         setNeedsLayout()
     }
+    
+    func sizeToWidthOfContainer(){
+        sizeToWidthOfContainerWithEqualInset(0)
+    }
+    
+    func sizeToWidthOfContainer(withEqualInset inset: CGFloat){
+        if let container = superview {
+            leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: inset).isActive = true
+            trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -inset).isActive = true
+        }
+    }
+    
+    func centerInContainer(){
+        if let container = superview {
+            centerYAnchor.constraint(equalTo: container.centerYAnchor).isActive = true
+            centerXAnchor.constraint(equalTo: container.centerXAnchor).isActive = true
+        }
+    }
+    
+    func centerHorizontally() {
+        if let container = superview {
+            centerXAnchor.constraint(equalTo: container.centerXAnchor).isActive = true
+        }
+    }
+
+    func centerVertically() {
+        if let container = superview {
+            centerYAnchor.constraint(equalTo: container.centerYAnchor).isActive = true
+        }
+    }
+    
 }
